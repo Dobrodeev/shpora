@@ -11,23 +11,30 @@
 <script src="assets/js/bootstrap.min.js"></script>
 <?php
 $arr = [];
-$arr[]='Valera';
-$arr[]='Igor';
+$arr[] = 'Valera';
+$arr[] = 'Igor';
 $arr[] = 'Fedor';
 $arr[] = 'Vane';
 $arr[] = 'Kay';
+echo var_dump($arr);
+echo '<br><br>';
+echo '<ol>';
 for($i = 0; $i < count($arr); $i++)
 {
-    echo $arr[$i].'<br>';
+    echo '<li>'.$arr[$i].'</li><br>';
 }
+echo '</ol>';
 echo '<hr>';
-echo var_dump($arr);
+//print_r($arr);
+//echo var_dump($arr);
 $students=[];
 $students['Valera'] = 'level 4';
 $students['Igor'] = 'level 5';
 $students['Fedor'] = 'level 3';
 $students['Vane'] = 'level 9';
 $students['Kay'] = 'level 1';
+echo var_dump($students);
+echo '<br><br>';
 foreach ($students as $key=>$name)
 {
     echo $key.' '.$name.'<br>';
@@ -36,9 +43,9 @@ foreach ($students as $key=>$name)
   // Ассоциативный массив
   echo 'Ассоциативный массив';
   echo '<br><br>';
-  $names["Иванов"]="Иван";
-  $names["Сидоров"]="Николай";
-  $names["Петров"]="Петр";
+  $names["Иванов"] = "Иван";
+  $names["Сидоров"] = "Николай";
+  $names["Петров"] = "Петр";
   // В данном примере: фамилии - ключи ассоциативного массива
   // , а имена - элементы массива names
   foreach ($names as $key)
@@ -56,6 +63,21 @@ foreach ($students as $key=>$name)
 // Морской бой
 $battle = [];
 $n = 10;
+$m = 3;
+$matrica = [];
+for($i = 0; $i < $m; $i++)
+{
+    for($j = 0; $j < $m; $j++)
+    {
+        $matrica[$i][$j] = rand(-4, 11);
+        echo ' '.$matrica[$i][$j];
+    }
+}
+echo '<br><br>';
+var_dump($matrica);
+echo '<pre>';
+print_r($matrica);
+echo '</pre>';
 for($i = 0; $i < $n; $i++)
 {
     for($j = 0; $j < $n; $j++)
@@ -122,7 +144,7 @@ foreach ($battle as $row)
 $number = array('one'=>'1', 'two'=>'2');
 echo '<pre>';
 print_r($number);
-echo '<pre>';
+echo '</pre>';
 // приобращении к элементам ассоциативного массива вместо индексов указываются соответствующие ключи(например строки: $arr['грязный'])
 echo $number['one'];
 echo '<br>';
@@ -136,12 +158,12 @@ $values = array('avocade', 'apple', 'banana');
 $result = array_combine($keys, $values);
 echo '<pre>';
 print_r($result);
-echo '<pre>';
+echo '</pre>';
 // extract($var_array) - создает из асоц. массива переменные
 $arr = array('event'=>'SIGGRAPH', 'city'=>'San Francisco', 'state'=>'CA');
 echo '<pre>';
 print_r($ship);
-echo '<pre>';
+echo '</pre>';
 extract($arr);
 echo $city.'<br>';
 echo $state.'<br>';
@@ -155,7 +177,7 @@ $ship = array(
     );
 echo '<pre>';
 print_r($ship);
-echo '<pre>';
+echo '</pre>';
 // 6.6. Обход массива. Листинг 6.29.
 $number = array('1', '2', '3');
 for ($i = 0; $i < count($number); $i++)
@@ -216,7 +238,7 @@ foreach ($ship as $key => $type)
 //  }
 //  get_sum(10, 5);
 //  Передача параметров по значению и ссылке
-
+echo 'Example function(&var)<br>';
 function get_sum(&$var)
 {
     $var = $var + 5;
