@@ -50,6 +50,7 @@ $array1[] = 'еще елемент';
 $array2['somewhere'] = 'outside';
 $array3[2][] = 'retro';// вместо $array3[2] подставляется array('poligon', '3D Max', 'cebab') работаем теперь с array
 //Пример использования in_array()
+echo '<br>';
 echo 'in_array() example<br>';
 $os = array("Mac", "NT", "Irix", "Linux");
 if (in_array("Irix", $os)) {
@@ -58,6 +59,33 @@ if (in_array("Irix", $os)) {
 if (in_array("mac", $os)) {
     echo "Нашел mac";
 }
+echo '<pre>';
+print_r($os);
+echo '</pre>';
+
+echo '<hr>';
+// Начиная с PHP 5.4
+$array = [
+    "foo" => "bar",
+    "bar" => "foo",
+];
+echo '<pre>';
+var_dump($array);
+echo '</pre>';
+// Кузнецов PHP listing 6.43
+$car = ['жигули', 'волга', 'запорожец', 'ока'];
+echo count($car).'<br>';
+$arr = [
+        [1, 2, 3, 4],
+    [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27]
+];
+echo '<pre>';
+echo var_dump($arr);
+echo '</pre>';
+echo count($arr).'<br>';
+echo count($arr[0]).'<br>';
+echo count($arr[1]).'<br>';
+echo count($arr, COUNT_RECURSIVE).'<br>';
 ?>
 </body>
 </html>
