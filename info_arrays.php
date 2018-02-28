@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Arrays</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 </head>
 <body>
@@ -79,13 +79,107 @@ $arr = [
         [1, 2, 3, 4],
     [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27]
 ];
+echo 'многомерный массив (массив массивов) <br>';
 echo '<pre>';
 echo var_dump($arr);
 echo '</pre>';
+echo 'количество элементов в массиве <br>';
 echo count($arr).'<br>';
 echo count($arr[0]).'<br>';
 echo count($arr[1]).'<br>';
 echo count($arr, COUNT_RECURSIVE).'<br>';
+$array = [1, 'fuck', 1, 'fuck', 'you'];
+$new = array_count_values($array);
+echo 'повторяющиеся элементы массива. <br>';
+echo '<pre>';
+print_r($new);
+echo '</pre>';
+// сумма элементов массива
+$arr = [1, 2, 3, 4, 5];
+$sum = array_sum($arr);
+echo $sum.'<br>';
+// случайные элементы массива
+$arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+$index = rand(0, count($arr) - 1);
+echo $arr[$index].'<br>';
+$arr_colors = ['blue', 'yellow', 'green', 'red', 'orange'];
+$rand_keys = array_rand($arr_colors, 2);
+echo 'случайные элементы массива. <br>';
+echo '<pre>';
+print_r($rand_keys);
+echo '</pre>';
+shuffle($arr);
+echo 'перемешаный массив.<br>';
+echo '<pre>';
+print_r($arr);
+echo '</pre>';
+// сортировка массивов
+$number = [2, 1, 4, 3, 5];
+echo 'до сортировки: <br>';
+for ($i = 0; $i < count($number); $i++)
+{
+    echo $number[$i].' ';
+}
+sort($number);
+echo '<br>';
+echo 'после сортировки: <br>';
+for ($i = 0; $i < count($number); $i++)
+{
+    echo $number[$i].' ';
+}
+// смешанные ключи массива
+$array_different = [
+    "foo" => "bar",
+    "bar" => "foo",
+    100   => -100,
+    -100  => 100,
+];
+echo '<pre>';
+var_dump($array_different);
+echo '</pre>';
+// индексированный массив бес ключа
+$array = array("foo", "bar", "hallo", "world");
+var_dump($array);
+// доступ к элементам массива
+$array = array(
+    "foo" => "bar",
+    42    => 24,
+    "multi" => array(
+        "dimensional" => array(
+            "array" => "foo"
+        )
+    )
+);
+echo '<pre>';
+var_dump($array);
+echo '</pre>';
+//echo '<br>';
+var_dump($array["foo"]);
+echo '<br>';
+var_dump($array[42]);
+echo '<br>';
+var_dump($array["multi"]["dimensional"]["array"]);
+echo '<br>';
+function array_writeln($arr)
+{
+    echo '<pre>';
+    print_r($arr);
+    echo '</pre>';
+}
+
+$arr = array(5 => 1, 12 => 2);
+//echo '<pre>';
+//print_r($arr);
+//echo '</pre>';
+array_writeln($arr);
+$arr[] = 56;    // В этом месте скрипта это
+// то же самое, что и $arr[13] = 56;
+$arr["x"] = 42; // Это добавляет к массиву новый
+// элемент с ключом "x"
+unset($arr[5]); // Это удаляет элемент из массива
+unset($arr);    // Это удаляет массив полностью
+
+
 ?>
 </body>
 </html>
