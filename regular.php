@@ -9,8 +9,8 @@
 </head>
 <body>
 <form action="regular_handler.php" method="post">
-    <input type="text" name="first">
-    <input type="submit" value="Отправить">
+    <input type="text" name="name">
+    <input type="submit" value="Проверить">
 </form>
 </body>
 </html>
