@@ -11,3 +11,15 @@ if (isset($_POST['name']))
         echo 'email is invalid';
     }
 }
+if (isset($_POST['number']) && isset($_POST['price']))
+{
+    if (!preg_match("|^[\d]*$|", $_POST['number']))
+    {
+        echo 'Неверный формат числа товарных позиций';
+    }
+    if (!preg_match("|^[\d]*[.,]?[\d]*$|", $_POST['price']))
+    {
+        echo 'Неверный формат цены';
+    }
+    echo number_format($_POST['number']*$_POST['price'], 2, '.', ' ');
+}

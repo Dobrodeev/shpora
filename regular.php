@@ -9,8 +9,13 @@
 </head>
 <body>
 <form action="regular_handler.php" method="post">
-    <input type="text" name="name">
-    <input type="submit" value="Проверить">
+    email <input type="text" name="name">
+    <input type="submit" value="Проверить"><br>
+    Число <input size=60 type="text" name="number">
+    <input type="submit" value="Проверить"><br>
+    Цена <input size=60 type="text" name="price">
+    <input type="submit" value="Проверить"><br>
+
 </form>
 </body>
 </html>
