@@ -1,3 +1,4 @@
+/* примеры работы с ассоциативными массивами */
 $array1 = [13, 'кабель', true];
 $array2 = ['city'=>'Kiev' 'institute'=>'KPI']
 $array3 = array(
