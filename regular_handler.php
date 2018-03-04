@@ -23,3 +23,10 @@ if (isset($_POST['number']) && isset($_POST['price']))
     }
     echo number_format($_POST['number']*$_POST['price'], 2, '.', ' ');
 }
+$content = file_get_contents('regular.php');
+$pattern = "|<title>(.*&?)</title>|si";
+// извлекаем мазвание HTML страницы
+if (preg_match($pattern, $content, $out))
+{
+    echo $out[1];
+}
