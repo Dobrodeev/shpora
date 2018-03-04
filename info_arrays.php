@@ -179,7 +179,71 @@ $arr["x"] = 42; // Это добавляет к массиву новый
 unset($arr[5]); // Это удаляет элемент из массива
 unset($arr);    // Это удаляет массив полностью
 
-
+// Создаем простой массив.
+$array = array(1, 2, 3, 4, 5);
+print_r($array);
+echo '<br>';
+// Теперь удаляем каждый элемент, но сам массив оставляем нетронутым:
+foreach ($array as $i => $value) {
+    unset($array[$i]);
+}
+echo 'array after delete. <br>';
+print_r($array);
+echo '<br>';
+// Добавляем элемент (обратите внимание, что новым ключом будет 5, вместо 0).
+echo 'нумерация массива началась с 5.<br>';
+$array[] = 6;
+print_r($array);
+echo '<br>';
+// Переиндексация:
+$array = array_values($array);
+$array[] = 7;
+echo 'array after переиндексации array_values()<br>';
+print_r($array);
+echo '<br>';
+$array = array("size" => "XL", "color" => "gold");
+print_r($array);
+echo '<br>';
+print_r(array_values($array));
+echo '<br>';
+//Функция unset() позволяет удалять ключи массива.
+$a = array(1 => 'один', 2 => 'два', 3 => 'три');
+unset($a[2]);
+/* даст массив, представленный так:
+   $a = array(1 => 'один', 3 => 'три');
+   а НЕ так:
+   $a = array(1 => 'один', 2 => 'три');
+*/
+//массив НЕ будет переиндексирован. Если вы действительно хотите поведения в
+// стиле "удалить и сдвинуть", можно переиндексировать массив используя array_values().
+$b = array_values($a);
+// Теперь $b это array(0 => 'один', 1 => 'три')
+echo '<br>';
+// foreach examples
+$arr = array("one", "two", "three");
+array_writeln($arr);
+echo 'use foreach($arr as $value): <br>';
+foreach ($arr as $value) {
+    echo "Значение: $value<br />\n";
+}
+echo 'use foreach($arr as $key=>$value)<br>';
+foreach ($arr as $key => $value) {
+    echo "Ключ: $key; Значение: $value<br />\n";
+}
+echo 'Многомерные массивы.<br>';
+/* Пример 4: многомерные массивы */
+$a = array();
+$a[0][0] = "a";
+$a[0][1] = "b";
+$a[1][0] = "y";
+$a[1][1] = "z";
+//print_r($a);
+array_writeln($a);
+foreach ($a as $v1) {
+    foreach ($v1 as $v2) {
+        echo "$v2\n";
+    }
+}
 ?>
 </body>
 </html>
