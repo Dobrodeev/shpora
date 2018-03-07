@@ -25,7 +25,9 @@ for ($i = 0; $i < count($number); $i++)
 {
     echo $number[$i].' ';
 }
-$nabor_slov = ['one', 'two', 'three', 'abs', 'four', 'five', 'apocalyptica', 'tree.js', 'dimension', 'rot', 'div', 'grad'];
+$nabor_slov = ['one', 'two', 'three', 'abs', 'four', 'five', 'apocalyptica', 'tree.js', 'dimension', 'rot', 'div', 'grad',
+    'bessel function', 'white noize', 'neman function', 'laplas', 'hevisaid', 'dimension', 'nonlinear systems',
+    'nonlinear stohastical dynamics', 'ricci flows'];
 function array_writeln($arr)
 {
     echo '<pre>';
