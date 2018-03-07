@@ -280,9 +280,13 @@ class sort {
 
     public function sorting()
     {
-        array_multisort($data,SORT_STRING);
+        array_multisort($this->data,SORT_STRING);
         echo '<pre>';
-        print_r($data);
+        print_r($this->data);
         echo '</pre>';
+    }
+    public function sitizen()
+    {
+        echo count($this->data);
     }
 }

@@ -2,3 +2,4 @@
 require_once ('sort.php');
 $obj = new sort();
 $obj->sorting();
+$obj->sitizen();
