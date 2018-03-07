@@ -1,6 +1,6 @@
 <?php
 
-class taskClass {
+class sort {
     private $data = array(
         array('x','67','16'),
         array('w','98','93'),
@@ -277,4 +277,12 @@ class taskClass {
         array('m','45','71'),
         array('y','78','87')
     );
+
+    public function sorting()
+    {
+        array_multisort($data,SORT_STRING);
+        echo '<pre>';
+        print_r($data);
+        echo '</pre>';
+    }
 }
