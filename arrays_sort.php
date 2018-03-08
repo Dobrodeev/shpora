@@ -139,6 +139,24 @@ usort($fruits, "cmp2");
 while (list($key, $value) = each($fruits)) {
     echo "\$fruits[$key]: " . $value["fruit"] . "\n";
 }
+echo '<br>Пример #4 Пример использования функции usort() с применением анонимной функции для сортировки многомерного массива';
+$array[0] = array('key_a' => 'z', 'key_b' => 'c');
+$array[1] = array('key_a' => 'x', 'key_b' => 'b');
+$array[2] = array('key_a' => 'y', 'key_b' => 'a');
+array_writeln($array[0]);
+array_writeln($array[1]);
+array_writeln($array[2]);
+function build_sorter($key) {
+    return function ($a, $b) use ($key) {
+        return strnatcmp($a[$key], $b[$key]);
+    };
+}
+
+usort($array, build_sorter('key_b'));
+
+foreach ($array as $item) {
+    echo $item['key_a'] . ', ' . $item['key_b'] . "\n";
+}
 ?>
 </body>
 </html>
