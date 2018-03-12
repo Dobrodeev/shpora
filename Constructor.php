@@ -8,5 +8,15 @@
 
 class Constructor
 {
+    private $var;
+    public function __construct()
+    {
+        echo 'Вызов конструктора <br>';
+        $this->var = 100;
+    }
 
+    public function anarchist()
+    {
+        $this->__construct();
+    }
 }
