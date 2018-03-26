@@ -19,7 +19,7 @@
  * Time: 17:28
  */
 define('ROOT', $_SERVER['DOCUMENT_ROOT']);
-echo ROOT . '<br>';
+echo ROOT.'<br>';
 $masiv = array('M', 'K', 'Git', 27);
 #
 echo '<pre>';
@@ -31,19 +31,19 @@ print_r($masiv);
 echo '</pre>';
 #
 $x = '25.3';
-echo 'приводим к типу переменную $x = ' . $x . '<br>';
-echo floatval($x) . '<br>';
+echo 'приводим к типу переменную $x = '.$x.'<br>';
+echo floatval($x).'<br>';
 if (is_float($x)) {
-	echo $x . ' теперь float<br>';
+	echo $x.' теперь float<br>';
 } else {
 	echo 'не float<br>';
 }
 
 $x = '25.3';
-echo intval($x) . '<br>';
+echo intval($x).'<br>';
 $x = '25.3';
 settype($x, float);
-echo $x . '<br>';
+echo $x.'<br>';
 echo '<br>';
 settype($x, string);
 if (is_string($x)) {
@@ -52,17 +52,16 @@ if (is_string($x)) {
 
 // переменная переменной
 $name = 'Misha';
-echo $name . '<br>';
+echo $name.'<br>';
 $$name = 'a';
-echo $$name . '<br>';
+echo $$name.'<br>';
 
 echo 'Это просто строка <br>';
 $stroca = 'Это просто строка';
-echo $stroca . '<br>';
+echo $stroca.'<br>';
 
 $url = 'http://www.malibu-sport.com.ua/kyiv/';
 print_r(parse_url($url));
 ?>
-
 </body>
 </html>
