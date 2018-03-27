@@ -59,10 +59,68 @@ echo $$name . '<br>';
 echo 'Это просто строка <br>';
 $stroca = 'Это просто строка';
 echo $stroca . '<br>';
-
 $url = 'http://www.malibu-sport.com.ua/kyiv/';
 print_r(parse_url($url));
-?>
+echo '<hr>';
+echo '<br>Константы <br>';
+echo __FILE__.'<br>';
+echo __LINE__.'<br>';
 
+function forExample()
+{
+    echo __FUNCTION__.'<br>';
+}
+echo PHP_VERSION.'<br>';
+echo PHP_OS.'<br>';
+echo '<hr>';
+$x = rand(0,18);
+echo 'x = '.$x.'<br>';
+echo $x%2 == 0 ? 'четнное число' : 'нечетное';
+echo '<br>';
+echo __DIR__.' Это наша директория <br>';
+?>
+<form>
+    <fieldset>
+        <legend>Наша форма</legend>
+<!--        <label>Описание поля</label>-->
+        <input type="text" placeholder="Введите имя…"><br>
+        <input type="text" placeholder="Введите фамилию…"><br>
+        <input type="password" placeholder="Введите пароль..."><br>
+<!--        <span class="help-block">Подсказка или доп. информация.</span><br>-->
+        <label class="checkbox">
+            <input type="checkbox"> Нажми здесь и выдели checkbox
+        </label><br>
+        <label for="">Выбираем пол</label> <br>
+        <label class="radio">
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+            Мужской
+        </label><br>
+        <label class="radio">
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            Женский
+        </label><br>
+<!--        -->
+        <label for="">Ставим галочки</label><br>
+        <label class="checkbox inline">
+            <input type="checkbox" id="inlineCheckbox1" value="option1"> 1-я галочка
+        </label>
+        <label class="checkbox inline">
+            <input type="checkbox" id="inlineCheckbox2" value="option2"> 2-я галочка
+        </label>
+        <label class="checkbox inline">
+            <input type="checkbox" id="inlineCheckbox3" value="option3"> 3-я галочка
+        </label><br>
+        <label for="">Ваш город</label><br>
+        <select name="cityes" id="">
+            <option value="Kiev">Kiev</option>
+            <option value="Kharcov">Kharcov</option>
+            <option value="Lvov">Lvov</option>
+            <option value="Lutsk">Lutsc</option>
+            <option value="Sloviansc">Sloviansc</option>
+            <option value="Donetsc">Donetsc</option>
+        </select><br><br>
+        <button type="submit" class="btn">Отправить</button>
+    </fieldset>
+</form>
 </body>
 </html>
