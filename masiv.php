@@ -30,7 +30,19 @@ echo '<pre>';
 print_r($masiv);
 echo '</pre>';
 #
+echo '<pre>';
+var_export($masiv);
+echo '</pre>';
+#
+$masiv[] = 17;
+$masiv[] = 'Vue.js';
 $x = '25.3';
+$masiv[] = $x;
+$masiv[] = 'const';
+$masiv[] = 1995;
+print_r($masiv);
+echo '<br>';
+
 echo 'приводим к типу переменную $x = ' . $x . '<br>';
 echo floatval($x) . '<br>';
 if (is_float($x)) {
