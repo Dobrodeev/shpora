@@ -14,10 +14,11 @@ spl_autoload_register(function ($class)
     include $class.'.php';
 });
 $constObject = new ConstClass();
+echo '<br>';
 if (defined('NAME')) echo 'we have const<br>';
 else echo 'we have not const<br>';
 
-if (defined('POSITION')) echo 'we have const<br>';
+if (defined('POSITION')) echo ' we have const<br>';
 else echo 'we have not const';
 
 //echo StaticClass::getPoint();

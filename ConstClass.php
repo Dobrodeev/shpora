@@ -8,8 +8,6 @@
 define("NAME", "cls");
 class ConstClass
 {
-//    const NAME = "cls";
-
     public function method()
     {
         echo self::NAME;
@@ -23,9 +21,11 @@ class ConstClass
         return 'call method '.__METHOD__.
             '<br>class name: '.__CLASS__.
             '<br>in file: '.__FILE__.
-            '<br>in strocke '.__LINE__;
+            '<br>in strocke '.__LINE__.
+            '<br>our function '.__FUNCTION__.
+            '<br>'.PHP_VERSION.
+            '<br>'.PHP_OS;
     }
-//    echo ConstClass::NAME;
 }
-//echo ConstClass::NAME;
+
 echo ConstClass::getPoint();
