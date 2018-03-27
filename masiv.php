@@ -42,7 +42,24 @@ $masiv[] = 'const';
 $masiv[] = 1995;
 print_r($masiv);
 echo '<br>';
-
+$arr = array('PHP', 'MySQL', 'Apache'); 
+  for ($i = 0; $i <= count($arr); $i++) 
+  { 
+    echo $arr[$i]." "; 
+  } 
+echo '<br>';
+  $arr["first"] = "PHP"; 
+  $arr["second"] = "MySQL"; 
+  $arr["third"] = "Apache";
+  foreach($arr as $key=>$value) {
+    echo "$key = $value <br>";          
+  }
+  echo 'А теперь массив без ключей: <br>';
+  foreach($arr as $value) {
+      echo $value.'<br>';
+  }
+  
+  
 echo 'приводим к типу переменную $x = ' . $x . '<br>';
 echo floatval($x) . '<br>';
 if (is_float($x)) {
