@@ -42,24 +42,65 @@ $masiv[] = 'const';
 $masiv[] = 1995;
 print_r($masiv);
 echo '<br>';
-$arr = array('PHP', 'MySQL', 'Apache'); 
-  for ($i = 0; $i <= count($arr); $i++) 
-  { 
-    echo $arr[$i]." "; 
-  } 
+$arr = array('PHP', 'MySQL', 'Apache');
+  for ($i = 0; $i <= count($arr); $i++)
+  {
+    echo $arr[$i]." ";
+  }
 echo '<br>';
-  $arr["first"] = "PHP"; 
-  $arr["second"] = "MySQL"; 
+  $arr["first"] = "PHP";
+  $arr["second"] = "MySQL";
   $arr["third"] = "Apache";
   foreach($arr as $key=>$value) {
-    echo "$key = $value <br>";          
+    echo "$key = $value <br>";
   }
   echo 'А теперь массив без ключей: <br>';
   foreach($arr as $value) {
       echo $value.'<br>';
   }
-  
-  
+$unsetArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+$countArray = count($unsetArray);
+echo 'Массив до удаления четных элементов <br>';
+echo '<pre>';
+print_r($unsetArray);
+echo '</pre>';
+for ($i=0; $i < count($unsetArray); $i++) {
+  if ($unsetArray[$i]%2 == 0) {
+    unset($unsetArray[$i]);
+  }
+}
+echo '<br>Удалили четные элементы из массива <br>';
+echo '<pre>';
+print_r($unsetArray);
+echo '</pre>';
+// foreach ($unsetArray as $key => $value) {
+//   if (isset($unsetArray[$i])) {
+//     echo "Элемент $unsetArray[$i] не определен <br>";
+//   }
+//   else {
+//     echo $value.'<br>';
+//   }
+
+for ($i=0; $i < $countArray ; $i++)
+{
+  if (isset($unsetArray[$i])) {
+    echo "Элемент $unsetArray[$i] нечетный <br>";
+  }
+  else echo $unsetArray[$i].'<br>';
+}
+echo '<br>Пример использования функции print_r()<br>';
+$a = array ('a' => 'apple', 'b' => 'banana', 'c' => array ('x', 'y', 'z'));
+print_r ($a);
+echo '<br>';
+$b = array ('m' => 'monkey', 'foo' => 'bar', 'x' => array ('x', 'y', 'z'));
+$results = print_r($b, true); // $results теперь содержит вывод print_r
+echo '<pre>';
+echo $results;
+echo '</pre>';
+echo '<br>';
+$varExample = 10;
+$result = $varExample%2;
+echo "После %2: $result<br>";
 echo 'приводим к типу переменную $x = ' . $x . '<br>';
 echo floatval($x) . '<br>';
 if (is_float($x)) {
