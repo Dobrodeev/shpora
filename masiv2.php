@@ -39,7 +39,22 @@ function consoleWritelineVar($arr) {
 // $universityAll['Училище'] = 'Медицинское';
 $universityAll['Училище'] = ['Медицинское', 'Энергетическое', 'Механическое'];
 consoleWriteline($universityAll);
-consoleWritelineVar($universityAll);
+// consoleWritelineVar($universityAll);
+echo __LINE__ . '<br>';
+echo __FILE__ . '<br>';
+// echo __FUNCTION__ . '<br>';
+// echo __global__ . '<br>';
+echo PHP_VERSION . '<br>';
+echo PHP_OS . '<br>';
+
+$exampleVar1 = '1991';
+if (is_string($exampleVar1)) {
+	echo 'is string<br>';
+}
+$intVar = (int) $exampleVar1;
+if (is_int($intVar)) {
+	echo 'is int<br>';
+}
 ?>
 </body>
 </html>
