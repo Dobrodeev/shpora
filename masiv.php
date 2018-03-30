@@ -43,31 +43,30 @@ $masiv[] = 1995;
 print_r($masiv);
 echo '<br>';
 $arr = array('PHP', 'MySQL', 'Apache');
-  for ($i = 0; $i <= count($arr); $i++)
-  {
-    echo $arr[$i]." ";
-  }
+for ($i = 0; $i <= count($arr); $i++) {
+	echo $arr[$i] . " ";
+}
 echo '<br>';
-  $arr["first"] = "PHP";
-  $arr["second"] = "MySQL";
-  $arr["third"] = "Apache";
-  foreach($arr as $key=>$value) {
-    echo "$key = $value <br>";
-  }
-  echo 'А теперь массив без ключей: <br>';
-  foreach($arr as $value) {
-      echo $value.'<br>';
-  }
+$arr["first"] = "PHP";
+$arr["second"] = "MySQL";
+$arr["third"] = "Apache";
+foreach ($arr as $key => $value) {
+	echo "$key = $value <br>";
+}
+echo 'А теперь массив без ключей: <br>';
+foreach ($arr as $value) {
+	echo $value . '<br>';
+}
 $unsetArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 $countArray = count($unsetArray);
 echo 'Массив до удаления четных элементов <br>';
 echo '<pre>';
 print_r($unsetArray);
 echo '</pre>';
-for ($i=0; $i < count($unsetArray); $i++) {
-  if ($unsetArray[$i]%2 == 0) {
-    unset($unsetArray[$i]);
-  }
+for ($i = 0; $i < count($unsetArray); $i++) {
+	if ($unsetArray[$i] % 2 == 0) {
+		unset($unsetArray[$i]);
+	}
 }
 echo '<br>Удалили четные элементы из массива <br>';
 echo '<pre>';
@@ -81,25 +80,31 @@ echo '</pre>';
 //     echo $value.'<br>';
 //   }
 
-for ($i=0; $i < $countArray ; $i++)
-{
-  if (isset($unsetArray[$i])) {
-    echo "Элемент $unsetArray[$i] нечетный <br>";
-  }
-  else echo $unsetArray[$i].'<br>';
+for ($i = 0; $i < $countArray; $i++) {
+	if (isset($unsetArray[$i])) {
+		echo "Элемент $unsetArray[$i] нечетный <br>";
+	} else {
+		echo $unsetArray[$i] . '<br>';
+	}
+
 }
 echo '<br>Пример использования функции print_r()<br>';
-$a = array ('a' => 'apple', 'b' => 'banana', 'c' => array ('x', 'y', 'z'));
-print_r ($a);
+$a = array('a' => 'apple', 'b' => 'banana', 'c' => array('x', 'y', 'z'));
+print_r($a);
 echo '<br>';
-$b = array ('m' => 'monkey', 'foo' => 'bar', 'x' => array ('x', 'y', 'z'));
+$b = array('m' => 'monkey', 'foo' => 'bar', 'x' => array('x', 'y', 'z'));
 $results = print_r($b, true); // $results теперь содержит вывод print_r
 echo '<pre>';
 echo $results;
 echo '</pre>';
 echo '<br>';
+define("D_Day", '1 May');
+define('SOME_CONST', 'Some_const');
+define('YEAR_BORN', 1991);
+echo D_Day . ' ' . SOME_CONST . ' ' . YEAR_BORN . '<br>';
+echo 'Постоянная Эйлера: ' . M_EULER . '<br>';
 $varExample = 10;
-$result = $varExample%2;
+$result = $varExample % 2;
 echo "После %2: $result<br>";
 echo 'приводим к типу переменную $x = ' . $x . '<br>';
 echo floatval($x) . '<br>';
@@ -133,21 +138,71 @@ $url = 'http://www.malibu-sport.com.ua/kyiv/';
 print_r(parse_url($url));
 echo '<hr>';
 echo '<br>Константы <br>';
-echo __FILE__.'<br>';
-echo __LINE__.'<br>';
+echo __FILE__ . '<br>';
+echo __LINE__ . '<br>';
 
-function forExample()
-{
-    echo __FUNCTION__.'<br>';
+function forExample() {
+	echo __FUNCTION__ . '<br>';
 }
-echo PHP_VERSION.'<br>';
-echo PHP_OS.'<br>';
+echo PHP_VERSION . '<br>';
+echo PHP_OS . '<br>';
 echo '<hr>';
-$x = rand(0,18);
-echo 'x = '.$x.'<br>';
-echo $x%2 == 0 ? 'четнное число' : 'нечетное';
+$x = rand(0, 18);
+echo 'x = ' . $x . '<br>';
+echo $x % 2 == 0 ? 'четнное число' : 'нечетное';
 echo '<br>';
-echo __DIR__.' Это наша директория <br>';
+echo __DIR__ . ' Это наша директория <br>';
+$str1 = 20;
+$str2 = 10;
+$str3 = 'in this case';
+$str4 = 0.707;
+$str5 = 'input & something';
+$str6 = '20';
+$str7 = '10';
+$result1 = $str1 + $str2;
+$result2 = $str1 + $str3;
+$result3 = $str3 + $str5;
+$result4 = $str1 + $str6;
+$result5 = $str6 + $str7;
+echo $str1 . ' ' . $str2 . ' ' . $str3 . ' ' . $str4 . ' ' . $str5 . '<br>';
+echo $result1 . ' ' . $result2 . '<br>';
+echo $result3 . ' ' . $result4 . ' ' . $result5 . '<br>';
+function consoleWriteline($arr) {
+	echo '<pre>';
+	print_r($arr);
+	echo '</pre>';
+}
+$strArray = [$str1, $str2, $str3, $str4, $str5, $str6, $str7];
+$strKeys = ['красный', 'оранжевый', 'желтый', 'зеленый', 'голубой', 'синий', 'фиолетовый'];
+$assocArray = array_combine($strKeys, $strArray);
+$exampleArray = ['Gold diggin whole', 'I want your tits', 18, 'true', 'false'];
+consoleWriteline($strKeys);
+echo '<pre>';
+print_r($strArray);
+echo '</pre>';
+echo '<pre>';
+print_r($assocArray);
+echo '</pre>';
+$a = array('a' => 'apple', 'b' => 'banana', 'c' => array('x', 'y', 'z'));
+print_r($a);
+consoleWriteline($a);
+function whatType($strArray) {
+	$rand = rand(0, 6);
+	if (is_double($strArray[$rand])) {
+		echo $strArray[$rand] . ' is double<br>';
+	} elseif (is_int($strArray[$rand])) {
+		echo $strArray[$rand] . ' is int<br>';
+	} elseif (is_string($strArray[$rand])) {
+		echo $strArray[$rand] . ' is string<br>';
+	} else {
+		echo 'something else type<br>';
+	}
+}
+whatType($strArray);
+echo $exampleArray[4] . '<br>';
+if (is_bool($exampleArray[4])) {
+	echo 'varrable is true or false<br>';
+}
 ?>
 <form>
     <fieldset>
