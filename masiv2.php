@@ -58,10 +58,13 @@ if (is_int($intVar)) {
 
 $lectionVar1 = '0219';
 $lectionVar2 = 11;
-echo $lectionVar1 + $lectionVar2 . '<br>';
+echo (string) $lectionVar1 + (string) $lectionVar2 . '<br>';
 // echo (int) $lectionVar1 + $lectionVar2 . '<br>';
 $stringVar1 = ' is my mail index';
+$stringVar2 = 'Maybe Kiev';
 echo $lectionVar1 + $stringVar1 . '<br>';
+echo $stringVar1 . ' ' . $stringVar2 . '<br>';
+echo $stringVar2 + $stringVar1 . '<br>';
 ?>
 </body>
 </html>
