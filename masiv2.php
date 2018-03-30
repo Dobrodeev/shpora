@@ -65,6 +65,94 @@ $stringVar2 = 'Maybe Kiev';
 echo $lectionVar1 + $stringVar1 . '<br>';
 echo $stringVar1 . ' ' . $stringVar2 . '<br>';
 echo $stringVar2 + $stringVar1 . '<br>';
+echo '<hr>';
+?>
+<form action="#" method="post" name="reg">
+  <input type="text" placeholder="Vase Imya"  required name="username"><br>
+    <input type="text" placeholder="Vasha Familia"  required name="secondname"><br>
+    <input type="password" placeholder="Parol" required name="userpass"><br>
+    <input type="file" name="filename"><br>
+    <span>Vash pol</span>
+   <label for="m">M</label> <input type='radio' name="pol" value="m"  id="m">
+   <label for="z">Z</label> <input type='radio' name="pol" value="z"  id="z"><br>
+    <select name="gorod">
+         <option value="Kiev">Kiev</option>
+        <option value="Kharkov">Kharkiv</option>
+        <option value="Lviv">Lviv</option>
+    </select><br>
+    <input type="submit" value="Регистрация" name="go">
+</form>
+<!--  -->
+<form action="#" method="get" name="reg">
+  <input type="text" placeholder="Vase Imya"  required name=arr['reg']['firstname']><br>
+    <input type="text" placeholder="Vasha Familia"  required name=arr['reg']['lastname']><br>
+    <input type="password" placeholder="Parol" required name=arr['reg']['password'] formmethod="post" ><br>
+    <input type="file" name="arr[picture][filename]"><br>
+    <span>Vash pol</span>
+   <label for="m">M</label> <input type='radio' name="arr['reg'][pol]" value="m"  id="m">
+   <label for="z">Z</label> <input type='radio' name="arr['reg'][pol]" value="z"  id="z"><br>
+    <select name="arr[gorod][]">
+         <option value="Kiev">Kiev</option>
+        <option value="Kharkov">Kharkiv</option>
+        <option value="Lviv">Lviv</option>
+    </select><br>
+    <input type="submit" value="Регистрация" name="go">
+</form>
+<?php
+if (isset($_POST['go'])) {
+	print_r($_POST);
+}
+$indicesServer = array('PHP_SELF',
+	'argv',
+	'argc',
+	'GATEWAY_INTERFACE',
+	'SERVER_ADDR',
+	'SERVER_NAME',
+	'SERVER_SOFTWARE',
+	'SERVER_PROTOCOL',
+	'REQUEST_METHOD',
+	'REQUEST_TIME',
+	'REQUEST_TIME_FLOAT',
+	'QUERY_STRING',
+	'DOCUMENT_ROOT',
+	'HTTP_ACCEPT',
+	'HTTP_ACCEPT_CHARSET',
+	'HTTP_ACCEPT_ENCODING',
+	'HTTP_ACCEPT_LANGUAGE',
+	'HTTP_CONNECTION',
+	'HTTP_HOST',
+	'HTTP_REFERER',
+	'HTTP_USER_AGENT',
+	'HTTPS',
+	'REMOTE_ADDR',
+	'REMOTE_HOST',
+	'REMOTE_PORT',
+	'REMOTE_USER',
+	'REDIRECT_REMOTE_USER',
+	'SCRIPT_FILENAME',
+	'SERVER_ADMIN',
+	'SERVER_PORT',
+	'SERVER_SIGNATURE',
+	'PATH_TRANSLATED',
+	'SCRIPT_NAME',
+	'REQUEST_URI',
+	'PHP_AUTH_DIGEST',
+	'PHP_AUTH_USER',
+	'PHP_AUTH_PW',
+	'AUTH_TYPE',
+	'PATH_INFO',
+	'ORIG_PATH_INFO');
+
+echo '<table cellpadding="10">';
+foreach ($indicesServer as $arg) {
+	if (isset($_SERVER[$arg])) {
+		echo '<tr><td>' . $arg . '</td><td>' . $_SERVER[$arg] . '</td></tr>';
+	} else {
+		echo '<tr><td>' . $arg . '</td><td>-</td></tr>';
+	}
+}
+echo '</table>';
+
 ?>
 </body>
 </html>
