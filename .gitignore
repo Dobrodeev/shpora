@@ -1,4 +1,4 @@
 .idea
 .phpintel
-.php-tmp
+*.php-tmp
 .kdev4
