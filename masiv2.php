@@ -55,6 +55,13 @@ $intVar = (int) $exampleVar1;
 if (is_int($intVar)) {
 	echo 'is int<br>';
 }
+
+$lectionVar1 = '0219';
+$lectionVar2 = 11;
+echo $lectionVar1 + $lectionVar2 . '<br>';
+// echo (int) $lectionVar1 + $lectionVar2 . '<br>';
+$stringVar1 = ' is my mail index';
+echo $lectionVar1 + $stringVar1 . '<br>';
 ?>
 </body>
 </html>
