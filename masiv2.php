@@ -65,6 +65,11 @@ $stringVar2 = 'Maybe Kiev';
 echo $lectionVar1 + $stringVar1 . '<br>';
 echo $stringVar1 . ' ' . $stringVar2 . '<br>';
 echo $stringVar2 + $stringVar1 . '<br>';
+$url = 'https://www.kpu.ua/ru/89528/narushenye_prav_y_svobod_cheloveka_v_ukrayne_vystuplenye_petra_symonenko_v_ramkah_37j_sessyy_soveta_oon_po_pravam_cheloveka_zheneva_21_marta_2018_goda';
+print_r(parse_url($url));
+$url2 = "http://php.net/manual/ru/reserved.variables.server.php";
+echo '<br>';
+print_r(parse_url($url2));
 echo '<hr>';
 ?>
 <form action="#" method="post" name="reg">
