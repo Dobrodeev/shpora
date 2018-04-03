@@ -72,7 +72,7 @@ echo '<br>';
 print_r(parse_url($url2));
 echo '<hr>';
 ?>
-<form action="#" method="post" name="reg">
+<!-- <form action="#" method="post" name="reg">
   <input type="text" placeholder="Vase Imya"  required name="username"><br>
     <input type="text" placeholder="Vasha Familia"  required name="secondname"><br>
     <input type="password" placeholder="Parol" required name="userpass"><br>
@@ -86,13 +86,16 @@ echo '<hr>';
         <option value="Lviv">Lviv</option>
     </select><br>
     <input type="submit" value="Регистрация" name="go">
-</form>
+    <input type="reset" value="Сброс" name="Сброс">
+</form> -->
 <!--  -->
-<form action="#" method="get" name="reg">
+<h4>Пример формы</h4>
+<form action="#" method="get" name="reg" class="form-horizontal">
+	<div class="control-group">
   <input type="text" placeholder="Vase Imya"  required name=arr['reg']['firstname']><br>
     <input type="text" placeholder="Vasha Familia"  required name=arr['reg']['lastname']><br>
     <input type="password" placeholder="Parol" required name=arr['reg']['password'] formmethod="post" ><br>
-    <input type="file" name="arr[picture][filename]"><br>
+    <input type="file" name="arr[picture][filename]"><br><br>
     <span>Vash pol</span>
    <label for="m">M</label> <input type='radio' name="arr['reg'][pol]" value="m"  id="m">
    <label for="z">Z</label> <input type='radio' name="arr['reg'][pol]" value="z"  id="z"><br>
@@ -100,10 +103,17 @@ echo '<hr>';
          <option value="Kiev">Kiev</option>
         <option value="Kharkov">Kharkiv</option>
         <option value="Lviv">Lviv</option>
-    </select><br>
-    <input type="submit" value="Регистрация" name="go">
+    </select><br><br>
+    <div class="form-actions">
+    <input type="submit" value="Регистрация" name="go" class="btn btn-primary">
+    <input type="reset" value="Сброс" name="Сброс" class="btn">
+    </div>
+    </div>
 </form>
+
 <?php
+echo '<br>';
+echo '<hr>';
 if (isset($_POST['go'])) {
 	print_r($_POST);
 }
