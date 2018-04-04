@@ -204,24 +204,24 @@ if (is_bool($exampleArray[4])) {
 	echo 'varrable is true or false<br>';
 }
 ?>
-<form>
+<form action="#" method="get" class="form-horizontal">
     <fieldset>
         <legend>Наша форма</legend>
 <!--        <label>Описание поля</label>-->
-        <input type="text" placeholder="Введите имя…"><br>
-        <input type="text" placeholder="Введите фамилию…"><br>
-        <input type="password" placeholder="Введите пароль..."><br>
+        <input type="text" placeholder="Введите имя…" required name=arr['reg']['firstName']><br>
+        <input type="text" placeholder="Введите фамилию…" required name=arr['reg']['lastName']><br>
+        <input type="password" placeholder="Введите пароль..." required name=arr['reg']['pass']><br>
 <!--        <span class="help-block">Подсказка или доп. информация.</span><br>-->
-        <label class="checkbox">
-            <input type="checkbox"> Нажми здесь и выдели checkbox
-        </label><br>
+<!--        <label class="checkbox">-->
+<!--            <input type="checkbox"> Нажми здесь и выдели checkbox-->
+<!--        </label><br>-->
         <label for="">Выбираем пол</label> <br>
         <label class="radio">
-            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="male" checked name="arr['reg']['sex']">
             Мужской
         </label><br>
         <label class="radio">
-            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="female" name="arr['reg']['sex']">
             Женский
         </label><br>
 <!--        -->
@@ -236,7 +236,7 @@ if (is_bool($exampleArray[4])) {
             <input type="checkbox" id="inlineCheckbox3" value="option3"> 3-я галочка
         </label><br>
         <label for="">Ваш город</label><br>
-        <select name="cityes" id="">
+        <select name="arr['city'][]" id="">
             <option value="Kiev">Kiev</option>
             <option value="Kharcov">Kharcov</option>
             <option value="Lvov">Lvov</option>
@@ -244,7 +244,10 @@ if (is_bool($exampleArray[4])) {
             <option value="Sloviansc">Sloviansc</option>
             <option value="Donetsc">Donetsc</option>
         </select><br><br>
-        <button type="submit" class="btn">Отправить</button>
+        <div class="form-actions">
+            <input type="submit" value="Регистрация" name="go" class="btn btn-primary">
+            <input type="reset" value="Сброс" name="Сброс" class="btn">
+        </div>
     </fieldset>
 </form>
 </body>

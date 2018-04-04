@@ -90,12 +90,12 @@ echo '<hr>';
 </form> -->
 <!--  -->
 <h4>Пример формы</h4>
-<form action="#" method="get" name="reg" class="form-horizontal">
+<form action="#" method="post" name="reg" class="form-horizontal" enctype="multipart/form-data">
 	<div class="control-group">
   <input type="text" placeholder="Vase Imya"  required name=arr['reg']['firstname']><br>
     <input type="text" placeholder="Vasha Familia"  required name=arr['reg']['lastname']><br>
     <input type="password" placeholder="Parol" required name=arr['reg']['password'] formmethod="post" ><br>
-    <input type="file" name="arr[picture][filename]"><br><br>
+    <input type="file" name="userfile"><br><br>
     <span>Vash pol</span>
    <label for="m">M</label> <input type='radio' name="arr['reg'][pol]" value="m"  id="m">
    <label for="z">Z</label> <input type='radio' name="arr['reg'][pol]" value="z"  id="z"><br>
@@ -112,62 +112,21 @@ echo '<hr>';
 </form>
 
 <?php
-echo '<br>';
-echo '<hr>';
+//print_r($_POST);
+//echo '<br>';
+//echo '<hr>';
 if (isset($_POST['go'])) {
-	print_r($_POST);
-}
-$indicesServer = array('PHP_SELF',
-	'argv',
-	'argc',
-	'GATEWAY_INTERFACE',
-	'SERVER_ADDR',
-	'SERVER_NAME',
-	'SERVER_SOFTWARE',
-	'SERVER_PROTOCOL',
-	'REQUEST_METHOD',
-	'REQUEST_TIME',
-	'REQUEST_TIME_FLOAT',
-	'QUERY_STRING',
-	'DOCUMENT_ROOT',
-	'HTTP_ACCEPT',
-	'HTTP_ACCEPT_CHARSET',
-	'HTTP_ACCEPT_ENCODING',
-	'HTTP_ACCEPT_LANGUAGE',
-	'HTTP_CONNECTION',
-	'HTTP_HOST',
-	'HTTP_REFERER',
-	'HTTP_USER_AGENT',
-	'HTTPS',
-	'REMOTE_ADDR',
-	'REMOTE_HOST',
-	'REMOTE_PORT',
-	'REMOTE_USER',
-	'REDIRECT_REMOTE_USER',
-	'SCRIPT_FILENAME',
-	'SERVER_ADMIN',
-	'SERVER_PORT',
-	'SERVER_SIGNATURE',
-	'PATH_TRANSLATED',
-	'SCRIPT_NAME',
-	'REQUEST_URI',
-	'PHP_AUTH_DIGEST',
-	'PHP_AUTH_USER',
-	'PHP_AUTH_PW',
-	'AUTH_TYPE',
-	'PATH_INFO',
-	'ORIG_PATH_INFO');
-
-echo '<table cellpadding="10">';
-foreach ($indicesServer as $arg) {
-	if (isset($_SERVER[$arg])) {
-		echo '<tr><td>' . $arg . '</td><td>' . $_SERVER[$arg] . '</td></tr>';
-	} else {
-		echo '<tr><td>' . $arg . '</td><td>-</td></tr>';
+	//print_r($_POST['arr']);
+	if(isset($_FILES['userfile'])){
+		if(is_uploaded_file($_FILES['userfile']['tmp_name'])){
+			$filename = basename($_FILES['userfile']['name']);
+			$uploaddir = 'files/';
+			$uploadfile = $uploaddir.$filename;
+			move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile);
+			echo "<img src='$uploadfile' alt='$filename'>";
+		}
 	}
 }
-echo '</table>';
-
 ?>
 </body>
 </html>
