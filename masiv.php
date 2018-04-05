@@ -204,7 +204,7 @@ if (is_bool($exampleArray[4])) {
 	echo 'varrable is true or false<br>';
 }
 ?>
-<form action="#" method="get" class="form-horizontal">
+<form action="#" method="post" class="form-horizontal">
     <fieldset>
         <legend>Наша форма</legend>
 <!--        <label>Описание поля</label>-->
@@ -250,5 +250,12 @@ if (is_bool($exampleArray[4])) {
         </div>
     </fieldset>
 </form>
+<?php
+if (isset($_POST['go'])) {
+    echo '<pre>';
+    print_r($_POST['arr']);
+    echo '</pre>';
+}
+?>
 </body>
 </html>
