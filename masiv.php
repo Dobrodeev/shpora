@@ -256,6 +256,35 @@ if (isset($_POST['go'])) {
     print_r($_POST['arr']);
     echo '</pre>';
 }
+echo '<br>';
+echo '<h4>Таблица умножения</h4>';
+echo '<table border="1" width="50%" rules="all">';
+for ($i = 1; $i < 10; $i++)
+{
+    echo '<tr>';
+    for ($j = 1; $j < 10; $j++)
+    {
+        echo '<td>'.$i*$j.'</td>';
+    }
+    echo '</tr>';
+}
+echo '</table>';
+echo '<br>';
+$b = 0;
+$c = 0;
+echo '<h4>Палитра цветов</h4>';
+echo "<table border='1'";
+for ($a=0; $a<256; $a+=51){
+    echo "<tr>";
+    for ($b=0; $b<256; $b+=51){
+        for ($c=0; $c<256; $c+=51)
+        {
+            echo "<td style=background-color:rgb($a,$b,$c);>&nbsp</td>";
+        }
+    }
+}
+echo "</tr>";
+echo "</table>";
 ?>
 </body>
 </html>
