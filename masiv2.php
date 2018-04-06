@@ -112,13 +112,19 @@ echo '<hr>';
 </form>
 
 <?php
-//print_r($_POST);
-//echo '<br>';
-//echo '<hr>';
-if (isset($_POST['go'])) {
-	//print_r($_POST['arr']);
-	if(isset($_FILES['userfile'])){
-		if(is_uploaded_file($_FILES['userfile']['tmp_name'])){
+$br = getenv("HTTP_USER_AGENT");
+$infoLocal = getenv("HTTP_HOST");
+echo $br.'<br>';
+echo $infoLocal.'<br>';
+if (isset($_POST['go']))
+{
+    echo '<pre>';
+	print_r($_POST['arr']);
+    echo '</pre>';
+	if(isset($_FILES['userfile']))
+	{
+		if(is_uploaded_file($_FILES['userfile']['tmp_name']))
+		{
 			$filename = basename($_FILES['userfile']['name']);
 			$uploaddir = 'files/';
 			$uploadfile = $uploaddir.$filename;
@@ -127,6 +133,28 @@ if (isset($_POST['go'])) {
 		}
 	}
 }
+// сделать чтобы загружалась только картинка .jpg и ограничить размер картинки
+//$max_image_width = 1280;
+//$max_image_height =960;
+//$max_image_size = 960 * 1280;
+//$valid_types = array("gif","jpg", "png", "jpeg");
+//
+//if (isset($_FILES["userfile"])) {
+//if (is_uploaded_file($_FILES['userfile']['tmp_name'])) {
+//    $filename = basename($_FILES['userfile']['name']);
+//    $ext = substr($_FILES['userfile']['name'], 1 + strrpos($_FILES['userfile']['name'], "."));
+//// strpos --  Возвращает позицию первого вхождения подстроки
+//
+//// получим массив свойств файла
+//    $size = GetImageSize($_FILES['userfile']['tmp_name']);
+//
+////проверим размер фото
+//    if (filesize($_FILES['userfile']['tmp_name']) > $max_image_size) {
+//        echo "Error: File size > " . $max_image_size;
+//    } elseif (!in_array($ext, $valid_types)) {
+//        echo 'Error: Invalid file type.';
+//    }
+//}
 ?>
 </body>
 </html>
