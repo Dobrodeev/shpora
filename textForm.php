@@ -13,8 +13,8 @@
 <script src="assets/js/bootstrap.min.js"></script>
 <?php
 echo '<h3>Тестовая форма</h3>';
-echo "<p>Переданное значение текстового поля: <b>".$_POST['textfield']."</b></p>";
-echo "<p>Переданное значение поля пароля: <b>".$_POST['pswfield']."</b></p>";
+echo "<p>Имя: <b>".$_POST['textfield']."</b></p>";
+echo "<p>Пароль: <b>".$_POST['pswfield']."</b></p>";
 echo "<p>Переданное значение скрытого поля hidden: <b>".$_POST['hidden']."</b></p>";
 echo '<hr size="1">';
 echo '<p>Были включены следующие независимые переключатели: </p>';
@@ -26,8 +26,8 @@ echo '<hr size="1">';
 if (isset($_POST['radiobutton']))
 {
     echo '<p>Был выбран независимый переключатель со следующим значением: ';
-    if ($_POST['radiobutton']==="yes") echo "<b>Yes</b>";
-    if ($_POST['radiobutton']==="no") echo "<b>No</b>";
+    if ($_POST['radiobutton']==='Красная гвардия') echo '<b>'.$_POST['radiobutton'].'</b>';
+    if ($_POST['radiobutton']==='Белая гвардия') echo '<b>'.$_POST['radiobutton'].'</b>';
     echo '</p>';
 }
 else echo '<p>Ни один из независимых переключателей не был выбран</p>';
