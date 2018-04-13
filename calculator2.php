@@ -49,28 +49,32 @@ if (isset($_POST['go']))
 //        echo $_POST['first']*$_POST['second'];
 //    elseif ($_POST['optionsRadios']=='option4')
 //        echo $_POST['first']/$_POST['second'];
-    $x = $_POST['optionsRadios'];
-    switch ($x)
+    if (isset($_POST['optionsRadios']))
     {
-        case 'option1':
-            echo $_POST['first']+$_POST['second'];
-            break;
-        case 'option2':
-            echo $_POST['first']-$_POST['second'];
-            break;
-        case 'option3':
-            echo $_POST['first']*$_POST['second'];
-            break;
-        case 'option4':
-            if($_POST['second']!=0)
-            {
-                echo $_POST['first']/$_POST['second'];
-            }
-            elseif ($_POST['second']==0)
-                echo 'devision by thero.<br>';
-            break;
-        default: echo 'Other.<br>';
+        $x = $_POST['optionsRadios'];
+        switch ($x)
+        {
+            case 'option1':
+                echo $_POST['first']+$_POST['second'];
+                break;
+            case 'option2':
+                echo $_POST['first']-$_POST['second'];
+                break;
+            case 'option3':
+                echo $_POST['first']*$_POST['second'];
+                break;
+            case 'option4':
+                if($_POST['second']!=0)
+                {
+                    echo $_POST['first']/$_POST['second'];
+                }
+                elseif ($_POST['second']==0)
+                    echo 'devision by thero.<br>';
+                break;
+            default: echo 'Other.<br>';
+        }
     }
+    else echo 'не выбрано действие';
 }
 ?>
 </body>

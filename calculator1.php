@@ -36,7 +36,7 @@
     </div>
 </form>
 <?php
-if (isset($_POST['go']))
+if (isset($_POST['go']) && isset($_POST['optionsRadios']))
 {
 //    echo '<pre>';
 //    print_r($_POST);
