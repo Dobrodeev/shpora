@@ -39,7 +39,7 @@
 if (isset($_POST['go']))
 {
 //    echo '<pre>';
-//    print_r($_POST['arr']);
+//    print_r($_POST);
 //    echo '</pre>';
     if ($_POST['optionsRadios']=='option1')
         echo $_POST['first']+$_POST['second'];
@@ -47,8 +47,11 @@ if (isset($_POST['go']))
         echo $_POST['first']-$_POST['second'];
     elseif ($_POST['optionsRadios']=='option3')
         echo $_POST['first']*$_POST['second'];
-    elseif ($_POST['optionsRadios']=='option4')
+    elseif ($_POST['optionsRadios']=='option4' && $_POST['second']!=0)
         echo $_POST['first']/$_POST['second'];
+    elseif ($_POST['optionsRadios']=='option4' && $_POST['second']==0)
+        echo 'division by thero.<br>';
+    else echo 'Other.';
 }
 ?>
 </body>

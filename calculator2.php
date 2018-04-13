@@ -62,7 +62,12 @@ if (isset($_POST['go']))
             echo $_POST['first']*$_POST['second'];
             break;
         case 'option4':
-            echo $_POST['first']/$_POST['second'];
+            if($_POST['second']!=0)
+            {
+                echo $_POST['first']/$_POST['second'];
+            }
+            elseif ($_POST['second']==0)
+                echo 'devision by thero.<br>';
             break;
         default: echo 'Other.<br>';
     }
