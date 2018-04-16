@@ -113,4 +113,44 @@ function oneAndFive()
     echo '5 - '.$fiveCount.'<br>';
 }
 oneAndFive();
+
+function colorsTable()
+{
+    echo '<h4>Палитра цветов</h4>';
+    echo "<table border='1'";
+    for ($i = 0; $i < 3; $i++)
+    {
+        echo "<tr>";
+        $z = mt_rand(40, 90);
+        for ($j = 0; $j < 5; $j++)
+        {
+            echo "<td style=background-color:rgb($i*15, $j*16, $z*11);>&nbsp&nbsp;&nbsp;$i $j $z</td>";
+        }
+        echo "</tr>";
+    }
+    echo "</table>";
+}
+colorsTable();
+
+function colorsExample()
+{
+    echo '</table>';
+    echo '<br>';
+    $b = 0;
+    $c = 0;
+    echo '<h4>Палитра цветов</h4>';
+    echo "<table border='1'";
+    for ($a=0; $a<256; $a+=51){
+        echo "<tr>";
+        for ($b=0; $b<256; $b+=51){
+            for ($c=0; $c<256; $c+=51)
+            {
+                echo "<td style=background-color:rgb($a,$b,$c);>&nbsp</td>";
+            }
+        }
+    }
+    echo "</tr>";
+    echo "</table>";
+}
+colorsExample();
 ?>
