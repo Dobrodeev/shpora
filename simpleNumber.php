@@ -124,7 +124,7 @@ function colorsTable()
         $z = mt_rand(40, 90);
         for ($j = 0; $j < 5; $j++)
         {
-            echo "<td style=background-color:rgb($i*15, $j*16, $z*11);>&nbsp&nbsp;&nbsp;$i $j $z</td>";
+            echo "<td style=background-color:rgb($i, $j, $z);>&nbsp&nbsp;&nbsp;$i $j $z</td>";
         }
         echo "</tr>";
     }
@@ -145,7 +145,7 @@ function colorsExample()
         for ($b=0; $b<256; $b+=51){
             for ($c=0; $c<256; $c+=51)
             {
-                echo "<td style=background-color:rgb($a,$b,$c);>&nbsp</td>";
+                echo "<td style=background-color:rgb($a,$b,$c);>&nbsp; $a $b $c</td>";
             }
         }
     }
