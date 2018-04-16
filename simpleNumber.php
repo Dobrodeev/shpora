@@ -23,26 +23,44 @@
 </html>
 <?php
 define('MAX_NUMBER', 100);
-$flag = null;
-echo 'Простые числа. <br>';
-for ($i = 2; $i < MAX_NUMBER; $i++)
+
+function simpleNumbers()
 {
-    for ($j = 2; $j < $i; $j++)
+    $flag = null;
+    echo 'Простые числа. <br>';
+    for ($i = 2; $i < MAX_NUMBER; $i++)
     {
-        if ($i%$j != 0) continue;
-        else
+        for ($j = 2; $j < $i; $j++)
         {
-            $flag = true;
-            break;
+            if ($i%$j != 0) continue;
+            else
+            {
+                $flag = true;
+                break;
+            }
         }
+        if (!$flag) echo $i.' ';
+        $flag = false;
     }
-    if (!$flag) echo $i.' ';
-    $flag = false;
 }
-echo '<br>Четные числа.';
-echo '<br>';
+simpleNumbers();
+
+function simpleNumbers2()
+{
+    echo '<br>';
+    echo 'Простые числа второй способ. <br>';
+    for ($i = 0; $i < MAX_NUMBER; $i++)
+    {
+        if ($i%2 != 0 && $i%3 != 0 && $i%5 != 0 && $i%7 != 0)
+            echo $i.' ';
+    }
+}
+simpleNumbers2();
+
 function chetNumber()
 {
+    echo '<br>Четные числа.';
+    echo '<br>';
     $countNumber = 0;
     for ($i = 0; $i < MAX_NUMBER; $i++)
     {
@@ -53,16 +71,18 @@ function chetNumber()
             $countNumber++;
         }
     }
-    echo '<br>Всего '.$countNumber.' четрных чисел <br>';
+    echo '<br>Всего '.$countNumber.' четных чисел <br>';
 }
 chetNumber();
+
 function oneAndFive()
 {
-    $i = 0;
-    while ($i < MAX_NUMBER)
+    echo 'Числа в промежутке [1, 5] <br>';
+    $oneCount = $twoCount = $threeCount = $fourCount = $fiveCount = 0;
+    for ($i = 0; $i < MAX_NUMBER; $i++)
     {
         $randVar = mt_rand(1, 5);
-        $oneCount = $twoCount = $threeCount = $fourCount = $fiveCount = 0;
+        echo $randVar.' ';
         switch ($randVar)
         {
             case 1:
@@ -84,5 +104,13 @@ function oneAndFive()
                 echo 'Default.<br>';
         }
     }
+    echo '<br>';
+    echo 'Число вхождений: <br>';
+    echo '1 - '.$oneCount.'<br>';
+    echo '2 - '.$twoCount.'<br>';
+    echo '3 - '.$threeCount.'<br>';
+    echo '4 - '.$fourCount.'<br>';
+    echo '5 - '.$fiveCount.'<br>';
 }
+oneAndFive();
 ?>
