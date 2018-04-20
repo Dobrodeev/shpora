@@ -44,11 +44,11 @@ if (isset($_POST['go']))
 {
     if (($_POST['first'] !== '') && ($_POST['second'] !== '') && ($_POST['optionsRadios']))
     {
-        $x = $_POST['optionsRadios'];
+        $act = $_POST['optionsRadios'];
         $fitst = $_POST['first'];
         $second = $_POST['second'];
 
-        switch ($x)
+        switch ($act)
         {
             case '+':
                 echo $fitst+$second;
