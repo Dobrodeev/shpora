@@ -15,20 +15,24 @@
     <input type="text" placeholder="первое число" required name=first><br>
     <input type="text" placeholder="второе число" required name=second><br>
     <label class="radio">
-        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+        <input type="radio" name="optionsRadios" value="+">
         +
     </label><br>
     <label class="radio">
-        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+        <input type="radio" name="optionsRadios" value="-">
         -
     </label><br>
     <label class="radio">
-        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option3">
+        <input type="radio" name="optionsRadios" value="*">
         *
     </label><br>
     <label class="radio">
-        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option4">
+        <input type="radio" name="optionsRadios" value="/">
         /
+    </label><br>
+    <label class="radio">
+        <input type="radio" name="optionsRadios" value="%">
+        %
     </label><br>
     <div class="form-actions">
         <input type="submit" value="&nbsp;=&nbsp;" name="go" class="btn btn-primary">
@@ -38,38 +42,33 @@
 <?php
 if (isset($_POST['go']))
 {
-//    echo '<pre>';
-//    print_r($_POST['arr']);
-//    echo '</pre>';
-//    if ($_POST['optionsRadios']=='option1')
-//        echo $_POST['first']+$_POST['second'];
-//    elseif ($_POST['optionsRadios']=='option2')
-//        echo $_POST['first']-$_POST['second'];
-//    elseif ($_POST['optionsRadios']=='option3')
-//        echo $_POST['first']*$_POST['second'];
-//    elseif ($_POST['optionsRadios']=='option4')
-//        echo $_POST['first']/$_POST['second'];
-    if (isset($_POST['optionsRadios']))
+    if (($_POST['first'] !== '') && ($_POST['second'] !== '') && ($_POST['optionsRadios']))
     {
         $x = $_POST['optionsRadios'];
         switch ($x)
         {
-            case 'option1':
+            case '+':
                 echo $_POST['first']+$_POST['second'];
                 break;
-            case 'option2':
+            case '-':
                 echo $_POST['first']-$_POST['second'];
                 break;
-            case 'option3':
+            case '*':
                 echo $_POST['first']*$_POST['second'];
                 break;
-            case 'option4':
+            case '/':
                 if($_POST['second']!=0)
                 {
                     echo $_POST['first']/$_POST['second'];
                 }
                 elseif ($_POST['second']==0)
-                    echo 'devision by thero.<br>';
+                    echo 'division by zero.<br>';
+                break;
+            case '%':
+                if ($_POST['second'] != 0)
+                    echo $_POST['first'] % $_POST['second'];
+                elseif ($_POST['second'] == 0)
+                    echo 'division by zero.<br>';
                 break;
             default: echo 'Other.<br>';
         }
