@@ -36,12 +36,12 @@
     </div>
 </form>
 <?php
-/*
-if (isset($_POST['go'])) {
-    if (($_POST['first']!=='') && ($_POST['second']!=='') && ($_POST['optionsRadios'])) {
+if (isset($_POST['go']))
+{
+    if (($_POST['first'] !== '') && ($_POST['second'] !== '') && ($_POST['optionsRadios']))
+    {
         $first=$_POST['first'];
         $second=$_POST['second'];
-
 
         if ($_POST['optionsRadios'] == '+'){
             echo $_POST['first'] + $_POST['second'];}
@@ -52,12 +52,14 @@ if (isset($_POST['go'])) {
         elseif ($_POST['optionsRadios'] == '/' && $_POST['second'] != 0)
             echo $_POST['first'] / $_POST['second'];
         elseif ($_POST['optionsRadios'] == '/' && $_POST['second'] == 0)
-            echo 'division by thero.<br>';
+            echo 'division by zero.<br>';
         else echo 'Other.';
-    } else{
-        echo'Заполните пустые строки';
     }
-}*/
+    else
+        {
+            echo 'Заполните пустые строки';
+        }
+}
 $array=array('BMW'=>array('color'=>'red','price'=>560),'VOLVO'=>array('color'=>'red','price'=>560),'PORSH'=>array('color'=>'red','price'=>560));
 foreach ($array as $mashina=>$item){
     echo  $mashina.'<br>';
@@ -65,13 +67,13 @@ foreach ($array as $mashina=>$item){
         echo $sv.' '.$value.'<br>';
     }
 }
-$aaray=array();
+$array = array();
 for($i=0;$i<=100;$i++){
     if($i%3==0){
-        $aaray[]=$i;
+        $array[]=$i;
     }
 }
-foreach ($aaray as $value){
+foreach ($array as $value){
     if($value%5==0){
         echo $value.'<br>';
     }
