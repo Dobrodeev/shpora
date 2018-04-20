@@ -56,36 +56,78 @@ if (isset($_POST['go']))
         $first = $_POST['first'];
         $second = $_POST['second'];
 
+        function plus($a, $b)
+        {
+            return $a + $b;
+        }
+
+        function minus($a, $b)
+        {
+            return $a - $b;
+        }
+
+        function mul($a, $b)
+        {
+            return $a * $b;
+        }
+
+        function div($a, $b)
+        {
+            return $a / $b;
+        }
+
+        function div2($a, $b)
+        {
+            return $a % $b;
+        }
+
+        function squares($a, $b)
+        {
+            return $a*$a + $b*$b;
+        }
+
+        function cubes($a, $b)
+        {
+            return $a*$a*$a + $b*$b*$b;
+        }
+        
         switch ($act)
         {
             case '+':
-                echo $first+$second;
+//                echo $first+$second;
+                echo plus($first,$second);
                 break;
             case '-':
-                echo $first-$second;
+//                echo $first-$second;
+                echo minus($first, $second);
                 break;
             case '*':
-                echo $first*$second;
+//                echo $first*$second;
+                echo mul($first, $second);
                 break;
             case '/':
                 if($first !=0)
                 {
-                    echo $first/$second;
+//                    echo $first/$second;
+                    echo div($first, $second);
                 }
                 elseif ($second == 0)
                     echo 'division by zero.<br>';
                 break;
             case '%':
                 if ($second != 0)
-                    echo $first % $second;
+//                    echo $first % $second;
+                    echo div2($first, $second);
                 elseif ($second == 0)
                     echo 'division by zero.<br>';
                 break;
             case 'x^2+y^2':
-                echo $first*$second;
+//                echo $first*$second;
+                echo squares($first, $second);
                 break;
             case 'x^3+y^3':
-                echo $first*$first*$first + $second*$second*$second;
+//                echo $first*$first*$first + $second*$second*$second;
+                echo cubes($first, $second);
                 break;
             default: echo 'Other.<br>';
         }
