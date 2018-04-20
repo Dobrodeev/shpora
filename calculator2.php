@@ -53,39 +53,39 @@ if (isset($_POST['go']))
     if (($_POST['first'] !== '') && ($_POST['second'] !== '') && ($_POST['optionsRadios']))
     {
         $act = $_POST['optionsRadios'];
-        $fitst = $_POST['first'];
+        $first = $_POST['first'];
         $second = $_POST['second'];
 
         switch ($act)
         {
             case '+':
-                echo $fitst+$second;
+                echo $first+$second;
                 break;
             case '-':
-                echo $fitst-$second;
+                echo $first-$second;
                 break;
             case '*':
-                echo $fitst*$second;
+                echo $first*$second;
                 break;
             case '/':
-                if($fitst !=0)
+                if($first !=0)
                 {
-                    echo $fitst/$second;
+                    echo $first/$second;
                 }
                 elseif ($second == 0)
                     echo 'division by zero.<br>';
                 break;
             case '%':
                 if ($second != 0)
-                    echo $fitst % $second;
+                    echo $first % $second;
                 elseif ($second == 0)
                     echo 'division by zero.<br>';
                 break;
             case 'x^2+y^2':
-                echo $fitst*$second;
+                echo $first*$second;
                 break;
             case 'x^3+y^3':
-                echo $fitst*$fitst*$fitst + $second*$second*$second;
+                echo $first*$first*$first + $second*$second*$second;
                 break;
             default: echo 'Other.<br>';
         }
