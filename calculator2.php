@@ -34,6 +34,14 @@
         <input type="radio" name="optionsRadios" value="%">
         %
     </label><br>
+    <label class="radio">
+        <input type="radio" name="optionsRadios" value="x^2+y^2">
+        squares
+    </label><br>
+    <label class="radio">
+        <input type="radio" name="optionsRadios" value="x^3+y^3">
+        cubes
+    </label><br>
     <div class="form-actions">
         <input type="submit" value="&nbsp;=&nbsp;" name="go" class="btn btn-primary">
         <input type="reset" value="Сброс" name="Сброс" class="btn">
@@ -72,6 +80,12 @@ if (isset($_POST['go']))
                     echo $fitst % $second;
                 elseif ($second == 0)
                     echo 'division by zero.<br>';
+                break;
+            case 'x^2+y^2':
+                echo $fitst*$second;
+                break;
+            case 'x^3+y^3':
+                echo $fitst*$fitst*$fitst + $second*$second*$second;
                 break;
             default: echo 'Other.<br>';
         }
