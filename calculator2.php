@@ -90,7 +90,7 @@ if (isset($_POST['go']))
         {
             return $a*$a*$a + $b*$b*$b;
         }
-        
+
         switch ($act)
         {
             case '+':
