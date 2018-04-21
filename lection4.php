@@ -55,7 +55,75 @@ if (isset($_POST['go'])) {
     echo '<pre>';
     print_r($_POST['arr']);
     echo '</pre>';
+
+    echo '<pre>';
+    var_dump($_POST['arr']);
+    echo '</pre>';
 }
+
+function arrayExample()
+{
+    $web=array('HTML','CSS','JavaScript','PHP','MySQL');
+    echo $web[0].' '; // выведет 'HTML'
+    echo $web[2].' '; // выведет 'JavaScript'
+    echo $web[3].' '; // выведет 'PHP'
+    echo '<br>';
+}
+
+arrayExample();
+
+function arrayExample2()
+{
+    $web=array(1=>'HTML',2=>'CSS',3=>'JavaScript',4=>'PHP',5=>'MySQL');
+    echo $web[1].'<br>'; // HTML
+    echo $web[2].'<br>'; // CSS
+    echo $web[4].'<br>'; // PHP
+    writeArray($web);
+}
+
+arrayExample2();
+
+function arrayIndex()
+{
+    $day[]='Понедельник'; // индекс 0
+    $day[]='Вторник'; // 1
+    $day[]='Среда'; // 2
+    $day[]='Четверг'; // 3
+    $day[]='Пятница'; // 4
+    $day[]='Суббота'; // 5
+    $day[]='Воскресенье'; // 6
+    writeArray($day);
+    writeArrayDump($day);
+}
+
+function writeArray($arr)
+{
+    echo '<pre>';
+    print_r($arr);
+    echo '</pre>';
+}
+
+function writeArrayDump($arr)
+{
+    echo '<pre>';
+    var_dump($arr);
+    echo '</pre>';
+}
+arrayIndex();
+// from lection5
+function hello($name){
+    echo "Hello, $name!";
+//    global $name;
+    $name = 'Vasya';
+}
+
+hello('Zack');
+$name = 'Mike';
+
+hello($name);
+echo $name;
+// Здесь уже будет Vasya
+
 ?>
 </body>
 </html>
