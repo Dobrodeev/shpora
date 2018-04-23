@@ -121,9 +121,56 @@ hello('Zack');
 $name = 'Mike';
 
 hello($name);
-echo $name;
+echo $name.'<br>';
 // Здесь уже будет Vasya
+echo 'Тернарная операция <br>';
 
+function modulChisla($chislo)
+{
+    $chislo = $chislo < 0 ? -$chislo : $chislo;
+    echo $chislo.'<br>';
+}
+$chislo_rand = mt_rand(-3,3);
+//echo 'Было: '.$chislo_rand.' стало: '.modulChisla($chislo_rand);
+modulChisla(-3);
+echo $chislo_rand.'<br>';
+echo modulChisla($chislo_rand);
+
+// if a==true echo 'Hello' else echo 'false'
+//$a = mt_rand(0,1);
+//if ($a == 1)
+//    $b = true;
+//else $b = false;
+//echo '$b = '.$b.'<br>';
+$b = false;
+echo '$b = '.$b.'<br>';
+function ternarOperator($a)
+{
+    echo $a == true ? 'Hello<br>' : 'false<br>';
+}
+ternarOperator($b);
+$variant = mt_rand(1,2);
+echo '$variant = '.$variant.'<br>';
+function ternarIf($var)
+{
+    $var = $var == 1 ? 'ножницы' : 'бумага';
+    echo $var.'<br>';
+}
+ternarIf($variant);
+
+function randGenerators()
+{
+    for ($i = 0; $i < 10; $i++)
+    {
+        echo rand(1,10).' ';
+    }
+    echo '<br>';
+    for ($i = 0; $i < 10; $i++)
+    {
+        echo mt_rand(1,10).' ';
+    }
+}
+randGenerators();
 ?>
 </body>
 </html>
