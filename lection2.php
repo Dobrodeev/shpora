@@ -237,6 +237,24 @@ function generatorRandomAssociated()
     $rand_keys = array_rand($arr, 2);
     printArray($rand_keys);
     echo $arr[$rand_keys[0]].' '.$arr[$rand_keys[1]].'<br>';
+    $keysArray = ['футбол', 'баскетбол', 'волейбол', 'гандбол', 'регби', 'тенис', 'хокей'];
+    $valuesArray = ['футболист', 'баскетболист', 'волейболист', 'гандболист', 'американский футболист', 'тенисист', 'хокеист'];
+    $sportArray = array_combine($keysArray, $valuesArray);
+    echo '<b>Виды спорта и спортсмены:</b> <br>';
+    foreach ($sportArray as $key=>$value)
+        echo $key.'=>'.$value.'<br>';
+    echo '<br>';
+    $ship = ['Пассажирские корабли'=>['Лайнер', 'Яхта', 'Паром'],
+        'Военные корабли'=>['Авианосец', 'Линкор', 'Эсминеу'],
+        'Грузовые корабли'=>['Сормовский', 'Волго-Дон', 'Окский']];
+    foreach ($ship as $key=>$type)
+    {
+        // вывод основных значений массивов
+        echo "<b>$key</b><br>";
+        foreach ($type as $value)
+            // вывод значений для каждого из массивов
+            echo "<li>$value</li>";
+    }
 }
 generatorRandomAssociated();
 ?>
