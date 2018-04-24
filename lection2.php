@@ -205,6 +205,23 @@ function asortingArraysAssoc()
     printArray($array);
 }
 asortingArraysAssoc();
+
+function generatorRandomArrays()
+{
+    $j = 0;
+    for ($i = 0; $i < 10; $i++)
+    {
+        $arr[$i] = $j++;
+        echo $arr[$i].' ';
+    }
+//    $arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+//    printArray($arr);
+//    writelineArray($arr);
+    //получаем случайный индекс массива
+    $index = mt_rand(0, count($arr)-1);
+    echo ' <br>Случайный елемент массива $arr: '.$arr[$index].'<br>';
+}
+generatorRandomArrays();
 ?>
 </body>
 </html>
