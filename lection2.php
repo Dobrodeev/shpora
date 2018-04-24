@@ -206,7 +206,7 @@ function asortingArraysAssoc()
 }
 asortingArraysAssoc();
 
-function generatorRandomArrays()
+function generatorRandomArrays() //подходит только для индексных массивов, индексы которых начинаются с 0
 {
     $j = 0;
     for ($i = 0; $i < 10; $i++)
@@ -214,14 +214,22 @@ function generatorRandomArrays()
         $arr[$i] = $j++;
         echo $arr[$i].' ';
     }
-//    $arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-//    printArray($arr);
-//    writelineArray($arr);
     //получаем случайный индекс массива
     $index = mt_rand(0, count($arr)-1);
     echo ' <br>Случайный елемент массива $arr: '.$arr[$index].'<br>';
 }
 generatorRandomArrays();
+
+function generatorRandomAssociated()
+{
+    $arr = ['красный', 'оранжевый', 'желтый', 'зеленый', 'голубой', 'синий', 'фиолетовый'];
+    foreach ($arr as $key=>$value)
+        echo $key.'->'.$value.'<br>';
+    $rand_keys = array_rand($arr, 2);
+    printArray($rand_keys);
+    echo $arr[$rand_keys[0]].' '.$arr[$rand_keys[1]].'<br>';
+}
+generatorRandomAssociated();
 ?>
 </body>
 </html>
