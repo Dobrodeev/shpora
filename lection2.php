@@ -203,6 +203,15 @@ function asortingArraysAssoc()
     echo 'Сортируем по ключам спомощью ksort()<br>';
     ksort($array);
     printArray($array);
+    echo 'Массив $arr: <br>';
+    foreach ($arr as $key=>$value)
+        echo $key.'=>'.$value.' ';
+    echo '<br>';
+    krsort($arr);
+    echo 'Массив $arr в обратном порядке по ключам: <br>';
+    foreach ($arr as $key=>$value)
+        echo $key.'=>'.$value.' ';
+    echo '<br>';
 }
 asortingArraysAssoc();
 
