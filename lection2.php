@@ -188,14 +188,19 @@ function asortingArraysAssoc()
     printArray($arr);
     asort($arr);
     printArray($arr);
-
+    arsort($arr);
+    echo ' А теперь по убыванию: <br>';
+    printArray($arr);
     $array = ['а'=>'первый','б'=>'второй', 'в'=>'третий', 'г'=>'четвертый', 'д'=>'пятый', 'е'=>'акробат', 'ж'=>'гимнаст',
         'з'=>'боксер', 'и'=>'кикбоксер', 'й'=>'футболист'];
     printArray($array);
-    echo '<br>Сортируем массив сохраняя связь ключ-значение<br>';
+    echo 'Сортируем массив сохраняя связь ключ-значение<br>';
     asort($array);
     printArray($array);
-    echo '<br>Сортируем по ключам спомощью ksort()<br>';
+    echo 'А теперь в обратном порядке<br>';
+    arsort($array);
+    printArray($array);
+    echo 'Сортируем по ключам спомощью ksort()<br>';
     ksort($array);
     printArray($array);
 }
