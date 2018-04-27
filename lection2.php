@@ -124,23 +124,21 @@ typesVars();
         echo '</table>';
     }
     mulTable();
-
     function writelineArray($array)
-    {
-        for ($i = 0; $i < count($array); $i++)
-            echo $array[$i].' ';
-    }
+{
+    for ($i = 0; $i < count($array); $i++)
+        echo $array[$i].' ';
+}
 
-    function generRandom($array)
+function generRandom($array)
+{
+    $array = [];
+    for ($i = 0; $i < MAX_RAND; $i++)
     {
-        $array = [];
-        for ($i = 0; $i < MAX_RAND; $i++)
-        {
-            $array = mt_rand(0, 177);
-            echo $array.' ';
-        }
+        $array = mt_rand(0, 177);
+        echo $array.' ';
     }
-//    generRandom();
+}
     function randomArray()
     {
         echo '<br>Массив до сортировки: <br>';
@@ -257,6 +255,60 @@ function generatorRandomAssociated()
     }
 }
 generatorRandomAssociated();
+
+function taskArrays()
+{
+    echo '<br>Массив [1, 100] до сортировки: <br>';
+    for ($i = 0; $i < MAX_RAND; $i++)
+    {
+        $randomArray[] = mt_rand(1,100);
+    }
+    writelineArray($randomArray);
+    sort($randomArray);
+    echo ' <br>Сортировка по значению. <br>';
+    writelineArray($randomArray);
+    shuffle($randomArray);
+    echo ' <br>Перемешали массив. <br>';
+    writelineArray($randomArray);
+    for ($i = 0; $i < count($randomArray); $i++)
+    {
+        $randomArray[$i] /= 10;
+    }
+    echo ' <br>Массив после деления на 10. <br>';
+    writelineArray($randomArray);
+    for ($i = 0; $i < count($randomArray); $i++)
+    {
+        $randomArray[$i] = floor($randomArray[$i]);
+    }
+    echo ' <br>Массив после округления в меньшую сторону. <br>';
+    writelineArray($randomArray);
+    $counterZero = 0;
+    for ($i = 0; $i < count($randomArray); $i++)
+    {
+        if ($randomArray[$i] == 0)
+            $counterZero ++;
+    }
+    echo "<br> Всего $counterZero нулевых элементов в массиве <br>";
+    for ($i = 0; $i < count($randomArray); $i++)
+    {
+        if ($randomArray[$i] != 0)
+//            unset($randomArray[$i]);
+            $deleted[] = $randomArray[$i];
+    }
+    echo '<br>Массив после удаления нулевых элементов<br>';
+//    printArray($deleted);
+    sort($deleted);
+    writelineArray($deleted);
+    echo '<br>Всего элементов в массиве: '.count($deleted).' Сумма всех элементов: '.array_sum($deleted).'<br>';
+    shuffle($deleted);
+    echo '<br>Снова перемешали<br>';
+    writelineArray($deleted);
+    array_flip($deleted);
+    echo '<br>Значения стали ключами, а ключи - значениями<br>';
+    writelineArray($deleted);
+}
+
+taskArrays();
 ?>
 </body>
 </html>
