@@ -303,9 +303,32 @@ function taskArrays()
     shuffle($deleted);
     echo '<br>Снова перемешали<br>';
     writelineArray($deleted);
-    array_flip($deleted);
-    echo '<br>Значения стали ключами, а ключи - значениями<br>';
-    writelineArray($deleted);
+    $keys = [];
+    $values = [];
+    for ($i = 0; $i < count($deleted); $i++)
+    {
+        $keys[$i] = $i;
+        $values[$i] = $deleted[$i];
+    }
+    $combineArray = array_combine($values, $keys);
+//    $combineArray = array_combine($keys, $values);
+//    echo '<br>Поменяли местами ключ-значение с помощью array_flip()<br>';
+//    $combineArray = array_flip($combineArray);
+    printArray($combineArray);
+//    writelineArray($combineArray);
+//    $combineArray = array_flip($combineArray);
+//    echo '<br>array_flip()<br>';
+//    writelineArray($combineArray);
+    ksort($combineArray);
+    echo 'Отсортировали массив по ключам <br>';
+    printArray($combineArray);
+    echo 'Максимальный элемент массива: '.max($combineArray).'<br>';
+    echo 'Минимальный элемент массива: '.min($combineArray).'<br>';
+//    for ($i = 0; $i < count($combineArray); $i + 2)
+//    {
+//        $secondArray[] = $combineArray[$i];
+//    }
+//    printArray($secondArray);
 }
 
 taskArrays();
