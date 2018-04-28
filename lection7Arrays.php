@@ -98,7 +98,15 @@ printArray($combinedArray);
 echo 'Снова перемешали массив <br>';
 shuffle($combinedArray);
 printArray($combinedArray);
-
+$arrayTest = [2008, 2014, 2016, 2018];
+echo 'Массив arrayTest <br>';
+printArray($arrayTest);
+$lastElement = array_pop($arrayTest);
+echo 'Последний элемент массива arrayTest: '.$lastElement.'<br>';
+printArray($arrayTest);
+$firstElement = array_shift($arrayTest);
+echo 'Первый элемент массива arrayTest: '.$firstElement.'<br>';
+printArray($arrayTest);
 $ar = [[1, 2, 3, 4, 5],
     [11, 12, 13, 14, 15]
     ];
