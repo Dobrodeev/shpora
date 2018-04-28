@@ -74,6 +74,21 @@ $ar2 = [11, 12, 13, 14, 15];
 $combinedArray = array_combine($ar1, $ar2);
 echo 'combined array: array_combine() <br>';
 printArray($combinedArray);
+rsort($combinedArray);
+echo 'combined array отсортировали в обратном порядке <br>';
+printArray($combinedArray);
+shuffle($combinedArray);
+echo 'Перемешали массив <br>';
+printArray($combinedArray);
+sort($combinedArray);
+echo 'Снова отсортировали <br>';
+printArray($combinedArray);
+echo 'Снова перемешали массив <br>';
+shuffle($combinedArray);
+printArray($combinedArray);
+echo 'Сортируем сохраняя связь ключ-значение <br>';
+asort($combinedArray);
+printArray($combinedArray);
 $ar = [[1, 2, 3, 4, 5],
     [11, 12, 13, 14, 15]
     ];
