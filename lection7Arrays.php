@@ -89,6 +89,16 @@ printArray($combinedArray);
 echo 'Сортируем сохраняя связь ключ-значение <br>';
 asort($combinedArray);
 printArray($combinedArray);
+echo 'Сортируем ключи массива <br>';
+ksort($combinedArray);
+printArray($combinedArray);
+echo 'Сортируем ключи массива в обратном порядке<br>';
+krsort($combinedArray);
+printArray($combinedArray);
+echo 'Снова перемешали массив <br>';
+shuffle($combinedArray);
+printArray($combinedArray);
+
 $ar = [[1, 2, 3, 4, 5],
     [11, 12, 13, 14, 15]
     ];
