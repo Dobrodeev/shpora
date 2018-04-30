@@ -113,6 +113,12 @@ $ar = [[1, 2, 3, 4, 5],
 array_multisort($ar[0], SORT_DESC, $ar[1], SORT_DESC);
 echo 'Сортируем многомерный массив <br>';
 printArray($ar);
+echo 'Применение функции array_values() <br>';
+$array = array("size" => "XL", "color" => "gold");
+printArray($array);
+//print_r(array_values($array));
+$valuesArray = array_values($array);
+printArray($valuesArray);
 ?>
 </body>
 </html>
