@@ -118,14 +118,22 @@ function taskArrays()
     echo '<pre>';
     print_r($newArray);
     echo '</pre>';
-    $anotherArray = $newArray;
+    $anotherArray = array_values($newArray);
+    echo 'Скопировали $newArray в новый массив <br>';
+    print_r($anotherArray);
+    echo 'Всего элементов в массиве '.sizeof($anotherArray).'<br>';
     for ($i = 0; $i < count($anotherArray); $i++)
     {
         $anotherArray[$i] *= $anotherArray[$i];
+        $anotherArray[$i] /= 10;
+        $anotherArray[$i] = ceil($anotherArray[$i]);
     }
     echo '<pre>';
     print_r($anotherArray);
     echo '</pre>';
+    $resultArray = array_merge($newArray, $anotherArray);
+    echo 'Слили два массива в один <br>';
+    print_r($resultArray);
 }
 
 taskArrays();
