@@ -119,6 +119,55 @@ printArray($array);
 //print_r(array_values($array));
 $valuesArray = array_values($array);
 printArray($valuesArray);
+echo 'Сравнение обычной и естественной сортировок. <br>';
+$arr_first = $arr_second = ['file12.txt', 'file10txt', 'file2.txt', 'file1.txt'];
+sort($arr_first);
+echo 'Обычная сортировка <br>';
+printArray($arr_first);
+echo 'Естественная сортировка <br>';
+natsort($arr_second);
+printArray($arr_second);
+$arr_second[15] = 526;
+$arr_second[16] = 'zara.jpg11';
+echo 'Добавили несколько элементов в массив <br>';
+printArray($arr_second);
+echo 'Переиндексировали массив <br>';
+$afterArrayValues = array_values($arr_second);
+printArray($afterArrayValues);
+$neebleElement = 529;
+if (in_array($neebleElement, $afterArrayValues))
+    echo 'Элемент '.$neebleElement.' есть в массиве <br>';
+else
+    echo 'Элемента '.$neebleElement.' нету в массиве <br>';
+$afterArrayValues['back'] = 'in black';
+$afterArrayValues['highwey'] = 'to hell';
+$afterArrayValues[2003] = 'heaven or hell';
+echo 'Добавили несколько элементов в массив <br>';
+printArray($afterArrayValues);
+$afterArrayValuesNext = array_values($afterArrayValues);
+echo 'Переиндексировали массив <br>';
+printArray($afterArrayValuesNext);
+echo 'Снова перемешали массив <br>';
+shuffle($afterArrayValuesNext);
+printArray($afterArrayValuesNext);
+echo 'Применили естественную сортировку <br>';
+natsort($afterArrayValuesNext);
+printArray($afterArrayValuesNext);
+echo 'Сортируем по ключам <br>';
+ksort($afterArrayValuesNext);
+printArray($afterArrayValuesNext);
+$keyArray = 10;
+if (array_key_exists($keyArray, $afterArrayValuesNext))
+    echo " Ключ $keyArray есть в массиве <br>";
+else echo " Ключа $keyArray нету в массиве <br>";
+$afterArrayValuesNext[] = 'Hellyeah';
+$afterArrayValuesNext[] = 'Pantera';
+$afterArrayValuesNext[] = 'Kreator';
+$afterArrayValuesNext[] = 'Sepultura';
+$afterArrayValuesNext[] = 'Megadeth';
+echo 'Добавили в массив несколько элементов <br>';
+printArray($afterArrayValuesNext);
+echo array_key_exists($keyArray, $afterArrayValuesNext) ? " Ключ $keyArray есть в массиве" : " Ключа $keyArray нету в массиве <br>";
 ?>
 </body>
 </html>
