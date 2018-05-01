@@ -167,7 +167,17 @@ $afterArrayValuesNext[] = 'Sepultura';
 $afterArrayValuesNext[] = 'Megadeth';
 echo 'Добавили в массив несколько элементов <br>';
 printArray($afterArrayValuesNext);
-echo array_key_exists($keyArray, $afterArrayValuesNext) ? " Ключ $keyArray есть в массиве" : " Ключа $keyArray нету в массиве <br>";
+echo array_key_exists($keyArray, $afterArrayValuesNext) ? " Ключ $keyArray есть в массиве <br>" : " Ключа $keyArray нету в массиве <br>";
+$a = array(
+    3 => 11,
+    1 => 22,
+    2 => 33,
+);
+$a[0] = 44;
+echo 'До переиндексации <br>';
+printArray($a);
+echo 'Массив после переиндексации <br>';
+printArray( array_values( $a ));
 ?>
 </body>
 </html>
