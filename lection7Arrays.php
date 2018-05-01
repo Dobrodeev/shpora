@@ -178,6 +178,32 @@ echo 'До переиндексации <br>';
 printArray($a);
 echo 'Массив после переиндексации <br>';
 printArray( array_values( $a ));
+$arrayColors = [0=>'blue', 1=>'red', 2=>'green', 3=>'red'];
+echo 'Массив цветов <br>';
+printArray($arrayColors);
+$key = array_search('green', $arrayColors);
+echo 'Нашли ключ для элемента массива: '.$arrayColors[2].'->'.$key.'<br>';
+$key = array_search('red', $arrayColors);
+echo 'Нашли ключ для элемента массива: '.$arrayColors[3].'->'.$key.'<br>';
+// проверка существования элементов массива
+function exampleArrays()
+{
+    $arr = [5=>1, 2, 3];
+    echo 'Проверяем существуют ли элементы в массиве <br>';
+    printArray($arr);
+    for ($i = 0; $i < 10; $i++)
+        if (isset($arr[$i]))
+            echo " Элемент \$arr[$i] существует <br>";
+    else
+        echo " Элемент \$arr[$i] не существует <br>";
+    if (is_array($arr))
+        echo '$arr - массив<br>';
+    if (is_array($arr[7]))
+        echo 'это массив <br>';
+    else
+        echo 'Это не массив <br>';
+}
+exampleArrays();
 ?>
 </body>
 </html>
