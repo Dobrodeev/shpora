@@ -213,7 +213,7 @@ function cardGame()
     $card[2]['club'] = '2 club.jpg';
     $card[2]['spade'] = '2 spade.jpg';
     $card[3]['club'] = '3 club.jpg';
-    $card[3]['diaamond'] = '3 diaamond.jpg';
+    $card[3]['diamond'] = '3 diaamond.jpg';
     $card[3]['heart'] = '3 heart.jpg';
     $card[3]['spade'] = '3 spade.jpg';
     $card[4]['club'] = '4 club.jpg';
@@ -224,10 +224,63 @@ function cardGame()
     $card[5]['diamond'] = '5 diamond.jpg';
     $card[5]['heart'] = '5 heart.jpg';
     $card[5]['spade'] = '5 spade.jpg';
+    function randomCards()
+    {
 
-    $way = 'images/';
+    }
     echo ' Игральные карты <br>';
-    echo '<img src="'.$way.$card[2]['heart'].'">';
+    $randomCard = mt_rand(2, 5);
+    $randomCardsuit = mt_rand(1,4);
+    echo 'first card '.$randomCard.'<br>';
+    echo 'first cardsuit '.$randomCardsuit.'<br>';
+    $randomCardsecond = mt_rand(1, 3) + 1;
+    $randomCardsuitsecond = mt_rand(0, 3) + 1;
+    echo 'second card '.$randomCardsecond.'<br>';
+    echo 'second cardsuit '.$randomCardsuitsecond.'<br>';
+    function isCanRandom($first, $firstsuit, $second, $secondsuit)
+    {
+        if ($first == $second && $firstsuit == $secondsuit)
+            echo 'Collision <br>';
+    }
+    isCanRandom($randomCard, $randomCardsuit, $randomCardsecond, $randomCardsuitsecond);
+    $suit = null;
+    $suitsecond = null;
+    switch ($randomCardsuit)
+    {
+        case 1:
+            $suit = 'club';
+            break;
+        case 2:
+            $suit = 'diamond';
+            break;
+        case 3:
+            $suit = 'heart';
+            break;
+        case 4:
+            $suit = 'spade';
+            break;
+        default:
+            echo 'Default <br>';
+    }
+    switch ($randomCardsuitsecond)
+    {
+        case 1:
+            $suitsecond = 'club';
+            break;
+        case 2:
+            $suitsecond = 'diamond';
+            break;
+        case 3:
+            $suitsecond = 'heart';
+            break;
+        case 4:
+            $suitsecond = 'spade';
+            break;
+        default:
+            echo 'Default <br>';
+    }
+    echo '<img src="images/'.$card[$randomCard][$suit].'">';
+    echo '<img src="images/'.$card[$randomCardsecond][$suitsecond].'">';
     printArray($card);
 }
 cardGame();
