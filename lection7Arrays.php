@@ -240,9 +240,20 @@ function cardGame()
     function isCanRandom($first, $firstsuit, $second, $secondsuit)
     {
         if ($first == $second && $firstsuit == $secondsuit)
-            echo 'Collision <br>';
+            echo '<b>Collision </b><br>';
     }
     isCanRandom($randomCard, $randomCardsuit, $randomCardsecond, $randomCardsuitsecond);
+    if ($randomCard == $randomCardsecond && $randomCardsuit == $randomCardsuitsecond)
+    {
+        if ($randomCardsuit == 1)
+            $randomCardsuitsecond = mt_rand(2, 4);
+        elseif ($randomCardsuit == 2)
+            $randomCardsuitsecond = mt_rand(3, 4);
+        elseif ($randomCardsuit == 3)
+            $randomCardsuitsecond = 4;
+        else
+            $randomCardsuitsecond = mt_rand(1 ,3);
+    }
     $suit = null;
     $suitsecond = null;
     switch ($randomCardsuit)
