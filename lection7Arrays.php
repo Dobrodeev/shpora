@@ -293,6 +293,14 @@ function cardGame()
     echo '<img src="images/'.$card[$randomCard][$suit].'">';
     echo '<img src="images/'.$card[$randomCardsecond][$suitsecond].'">';
     printArray($card);
+    $allCards = [];
+    echo 'Массив изображений всех карт с 66 по 117 <br>';
+    for ($i = 66; $i < 118; $i++)
+    {
+        $allCards[$i] = $i;
+        echo $allCards[$i].' ';
+    }
+//    printArray($allCards);
 }
 cardGame();
 
