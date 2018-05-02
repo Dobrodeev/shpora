@@ -204,6 +204,34 @@ function exampleArrays()
         echo 'Это не массив <br>';
 }
 exampleArrays();
+
+function cardGame()
+{
+    $card = [];
+    $card[2]['heart'] = '2 heart.jpg';
+    $card[2]['diamond'] = '2 diamond.jpg';
+    $card[2]['club'] = '2 club.jpg';
+    $card[2]['spade'] = '2 spade.jpg';
+    $card[3]['club'] = '3 club.jpg';
+    $card[3]['diaamond'] = '3 diaamond.jpg';
+    $card[3]['heart'] = '3 heart.jpg';
+    $card[3]['spade'] = '3 spade.jpg';
+    $card[4]['club'] = '4 club.jpg';
+    $card[4]['diamond'] = '4 diamond.jpg';
+    $card[4]['heart'] = '4 heart.jpg';
+    $card[4]['spade'] = '4 spade.jpg';
+    $card[5]['club'] = '5 club.jpg';
+    $card[5]['diamond'] = '5 diamond.jpg';
+    $card[5]['heart'] = '5 heart.jpg';
+    $card[5]['spade'] = '5 spade.jpg';
+
+    $way = 'images/';
+    echo ' Игральные карты <br>';
+    echo '<img src="'.$way.$card[2]['heart'].'">';
+    printArray($card);
+}
+cardGame();
+
 ?>
 </body>
 </html>
