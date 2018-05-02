@@ -301,6 +301,16 @@ function cardGame()
         echo $allCards[$i].' ';
     }
 //    printArray($allCards);
+    $stack = array("orange", "banana", "apple", "raspberry");
+    echo '<br>';
+    echo 'Ассоцитивный массив до применения функции array_pop()<br>';
+    printArray($stack);
+    $fruit = array_pop($stack);
+    echo 'Ассоцитивный массив после применения функции array_pop(): мы забрали последний элемент массива:<br>';
+    printArray($stack);
+    echo ' А теперь забрали первый элемент: <br>';
+    $nextFruit = array_shift($stack);
+    printArray($stack);
 }
 cardGame();
 
