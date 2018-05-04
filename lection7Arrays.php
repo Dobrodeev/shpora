@@ -213,7 +213,7 @@ function cardGame()
     $card[2]['club'] = '2 club.jpg';
     $card[2]['spade'] = '2 spade.jpg';
     $card[3]['club'] = '3 club.jpg';
-    $card[3]['diamond'] = '3 diaamond.jpg';
+    $card[3]['diamond'] = '3 diamond.jpg';
     $card[3]['heart'] = '3 heart.jpg';
     $card[3]['spade'] = '3 spade.jpg';
     $card[4]['club'] = '4 club.jpg';
@@ -300,7 +300,15 @@ function cardGame()
         $allCards[$i] = $i;
         echo $allCards[$i].' ';
     }
-//    printArray($allCards);
+    echo '<br>';
+    $pokerCards = [];
+    echo 'Колода карт для покера : 52 карты (без джокеров)<br>';
+    for ($i = 0; $i < 52; $i++)
+    {
+        $pokerCards[$i] = $i;
+        echo $pokerCards[$i].' ';
+    }
+
     $stack = array("orange", "banana", "apple", "raspberry");
     echo '<br>';
     echo 'Ассоцитивный массив до применения функции array_pop()<br>';
@@ -311,9 +319,51 @@ function cardGame()
     echo ' А теперь забрали первый элемент: <br>';
     $nextFruit = array_shift($stack);
     printArray($stack);
+
 }
 cardGame();
 
+function forArrays()
+{
+    echo '<hr>';
+    $stack = array("orange", "banana", "apple", "raspberry");
+    printArray($stack);
+    $fruit = array_pop($stack);
+    echo 'Забрали последний элемент массива: '.$fruit.'<br>';
+    printArray($stack);
+    $firstElement = array_shift($stack);
+    echo 'Забрали первый элемент массива: '.$firstElement.'<br>';
+    printArray($stack);
+    echo 'добавим элемент в конец массива элементы: <br>';
+    array_push($stack, 'мандарин', 'апельсин', 'грейпфрут', 'ананас', 'манго');
+    printArray($stack);
+    echo ' А теперь добавим в начало массива: <br>';
+    array_unshift($stack, 'potate', 'лимон', 'грибы');
+    printArray($stack);
+    echo 'Просто добамим элементы в массив без применения функций: <br>';
+    $stack[] = 'яблоко';
+    $stack[] = 'груша';
+    $stack[] = 'слива';
+    $stack[] = 'хурма';
+    printArray($stack);
+    echo 'Создадим массив карт: <br>';
+    $forPoker = [];
+    for ($i = 0; $i < 4; $i++)
+    {
+        $forPoker[$i] = $i;
+        echo $forPoker[$i].' ';
+    }
+    echo '<br>';
+    $forPokerCards = [];
+    $forPokerCards[0][2]['heart'] = '2 heart.jpg';
+    $forPokerCards[1][2]['diamond'] = '2 diamond.jpg';
+    $forPokerCards[2][2]['club'] = '2 club.jpg';
+    $forPokerCards[3][2]['spade'] = '2 spade.jpg';
+    printArray($forPokerCards);
+//    $cardCombine = array_combine($forPoker, $forPokerCards);
+//    printArray($cardCombine);
+}
+forArrays();
 ?>
 </body>
 </html>
