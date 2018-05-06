@@ -364,6 +364,36 @@ function forArrays()
 //    printArray($cardCombine);
 }
 forArrays();
+function rememberArrays()
+{
+    $web=array('HTML','CSS','JavaScript','PHP','MySQL');
+    echo $web[1].'<br>'; // выведет 'CSS'
+    $web[]='еще одно значение с след. индексом';
+
+    $cars = array("Volvo", "BMW", "Toyota");
+    echo 'Using for():<br>';
+    for($x = 0; $x < count($cars); $x++) {
+        echo $cars[$x].' ';
+    }
+//    foreach($cars as $key=>$value)
+//    {
+//        echo "$value $key<br>";
+//    }
+    echo '<br>';
+    echo 'Using foreach():<br>';
+    foreach ($cars as $car=>$value)
+    {
+        echo $car.'=>'.$value.'<br>';
+    }
+    echo 'Assoc arrays: <br>';
+    $about=array(
+        'name'=>'Nickolay',
+        'age'=>34,
+	    'gender'>'man'
+    );
+    echo $about['name'];
+}
+rememberArrays();
 ?>
 </body>
 </html>
