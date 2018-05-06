@@ -394,6 +394,29 @@ function rememberArrays()
     echo $about['name'];
 }
 rememberArrays();
+
+function mathFunctions()
+{
+    echo '<br>';
+    echo 'Математические функции округления <br>';
+    echo '|-7.2|='.abs(-7.2).'<br>';
+    echo '|5|='.abs(5).'<br>';
+    echo '|-4|'.abs(-4).'<br>';
+    echo 'round(3.4)='.round(3.4).'<br>';
+    echo 'round(3.5)='.round(3.5).'<br>';
+    echo 'round(3.6, 0)='.round(3.6, 0).'<br>';
+    echo 'round(3.435)='.round(3.435, 2).'<br>';
+    echo 'round(5.045, 2)='.round(5.045, 2).'<br>';
+    echo 'round(5.055, 2)='.round(5.055, 2).'<br>';
+    echo 'Применение функции ceil() - округление в большую сторону: <br>';
+    echo 'ceil(5.1)='.ceil(5.1).'<br>';
+    echo 'floor(5.8)='.floor(5.8).'<br>';
+    /* example from php.net */
+    echo ceil(4.3);    // 5
+    echo ceil(9.999);  // 10
+    echo ceil(-3.14);  // -3
+}
+mathFunctions();
 ?>
 </body>
 </html>
