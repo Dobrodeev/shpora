@@ -415,8 +415,52 @@ function mathFunctions()
     echo ceil(4.3);    // 5
     echo ceil(9.999);  // 10
     echo ceil(-3.14);  // -3
+    echo '<br>';
 }
 mathFunctions();
+
+function alreadyArrays()
+{
+    $arrayFibonacci = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144];
+    echo 'Массив чисел Фибоначчи: <br>';
+    printArray($arrayFibonacci);
+    $reversFibonacci = array_reverse($arrayFibonacci);
+    echo 'Массив в обратном порядке: <br>';
+    printArray($reversFibonacci);
+    echo 'Поменяли местами ключ-значение: <br>';
+    $flipArray = array_flip($arrayFibonacci);
+    printArray($flipArray);
+    $arrayValues = array_values($flipArray);
+    echo 'Переиндексировали массив: <br>';
+    printArray($arrayValues);
+    $card = [];
+    $card[2]['heart'] = '2 heart.jpg';
+    $card[2]['diamond'] = '2 diamond.jpg';
+    $card[2]['club'] = '2 club.jpg';
+    $card[2]['spade'] = '2 spade.jpg';
+    $card[3]['club'] = '3 club.jpg';
+    $card[3]['diamond'] = '3 diamond.jpg';
+    $card[3]['heart'] = '3 heart.jpg';
+    $card[3]['spade'] = '3 spade.jpg';
+    $card[4]['club'] = '4 club.jpg';
+    $card[4]['diamond'] = '4 diamond.jpg';
+    $card[4]['heart'] = '4 heart.jpg';
+    $card[4]['spade'] = '4 spade.jpg';
+    $card[5]['club'] = '5 club.jpg';
+    $card[5]['diamond'] = '5 diamond.jpg';
+    $card[5]['heart'] = '5 heart.jpg';
+    $card[5]['spade'] = '5 spade.jpg';
+    echo 'Выведем массив игральных карт: <br>';
+    printArray($card);
+    $forPokerCards = [];
+    $forPokerCards[0][2]['heart'] = '2 heart.jpg';
+    $forPokerCards[1][2]['diamond'] = '2 diamond.jpg';
+    $forPokerCards[2][2]['club'] = '2 club.jpg';
+    $forPokerCards[3][2]['spade'] = '2 spade.jpg';
+    echo 'Выведем трехмерный массив игральных карт: <br>';
+    printArray($forPokerCards);
+}
+alreadyArrays();
 ?>
 </body>
 </html>
