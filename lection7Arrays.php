@@ -433,6 +433,59 @@ function alreadyArrays()
     $arrayValues = array_values($flipArray);
     echo 'Переиндексировали массив: <br>';
     printArray($arrayValues);
+//    Пример #1 Пример использования array_keys()
+    $array = array(0 => 100, "color" => "red");
+    printArray(array_keys($array));
+
+    $array = array("blue", "red", "green", "blue", "blue");
+    printArray(array_keys($array, "blue"));
+
+    $array = array("color" => array("blue", "red", "green"),
+        "size"  => array("small", "medium", "large"));
+    printArray(array_keys($array));
+    echo 'Массив квадратов: <br>';
+    $squaresArray = [];
+    $j = 10;
+    for ($i = 0; $i < 10; $i++)
+    {
+        $j++;
+        $squaresArray[$i] = $j*$j;
+        echo $squaresArray[$i].' ';
+    }
+    echo '<br>';
+    echo 'Массив факториалов: <br>';
+    $factorial = 1;
+    for ($i = 1; $i < 10; $i++)
+    {
+        $factorial *= $i;
+        echo $factorial.' ';
+    }
+    echo '<br>';
+    function fibonacci($n)
+    {
+        if ($n < 3) {
+            return 1;
+        }
+        else {
+            return fibonacci($n-1) + fibonacci($n-2);
+        }
+    }
+    echo 'Массив чесел Фибоначчи: <br>';
+    for ($n = 1; $n <= 16; $n++) {
+        echo(fibonacci($n) . ", ");
+    }
+//    echo("...\n");
+    echo '<br>';
+    echo 'Массив степеней двойки:<br>';
+    $twoArray = [];
+    $k = 2;
+    for ($i = 0; $i < 10; $i++)
+    {
+        $twoArray[$i] = $k;
+        $k *= 2;
+        echo $twoArray[$i].' ';
+    }
+    echo '<br>';
     $card = [];
     $card[2]['heart'] = '2 heart.jpg';
     $card[2]['diamond'] = '2 diamond.jpg';
