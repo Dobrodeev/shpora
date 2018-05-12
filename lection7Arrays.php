@@ -486,6 +486,29 @@ function alreadyArrays()
         echo $twoArray[$i].' ';
     }
     echo '<br>';
+    echo 'Создадим массив содержащий диапазон значений:<br>';
+    foreach (range(0, 12) as $number) {
+        echo $number.' ';
+    }
+    echo '<br>';
+    echo 'Создадим массив содержащий диапазон значений с определенным шагом:<br>';
+    foreach (range(0, 100, 10) as $number) {
+        echo $number.' ';
+    }
+    // Использование последовательности знаков
+// array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i');
+    echo '<br>Выведем последовательность знаков:<br>';
+    foreach (range('a', 'i') as $letter) {
+        echo $letter.' ';
+    }
+// array('c', 'b', 'a');
+    echo '<br>А теперь в обратном порядке:<br>';
+    foreach (range('c', 'a') as $letter) {
+        echo $letter.' ';
+    }
+    echo '<br>';
+    $arrayRange = array_combine(range(11,14),range(1,4));
+    printArray($arrayRange);
     $card = [];
     $card[2]['heart'] = '2 heart.jpg';
     $card[2]['diamond'] = '2 diamond.jpg';
