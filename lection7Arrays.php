@@ -693,6 +693,61 @@ function forRangeExasmples()
     printArray($arrLow);
 }
 forRangeExasmples();
+
+function listExample1()
+{
+    $info = array('кофе', 'коричневый', 'кофеин');
+
+// Составить список всех переменных
+    list($drink, $color, $power) = $info;
+    echo "$drink - $color, а $power делает его особенным.\n";
+    echo '<br>';
+// Составить список только некоторых из них
+    list($drink, , $power) = $info;
+    echo "В $drink есть $power.\n";
+    echo '<br>';
+// Или пропустить все, кроме третьей
+    list( , , $power) = $info;
+    echo "Мне нужен $power!\n";
+    echo '<br>';
+// list() не работает со строками
+    list($bar) = "abcde";
+    var_dump($bar); // NULL
+    echo '<br>';
+}
+listExample1();
+
+function listExample2()
+{
+    $array = array(1, array(2, 3));
+    printArray($array);
+    list($a, list($b, $c)) = $array;
+    echo 'list() с индексами массива<br>';
+    var_dump($a, $b, $c);
+    echo '<br>';
+}
+listExample2();
+
+function listExample3()
+{
+    $info = array('кофе', 'коричневый', 'кофеин');
+
+    list($a[0], $a[1], $a[2]) = $info;
+    echo '<pre>';
+    var_dump($a);
+    echo '</pre>';
+}
+listExample3();
+
+function listExample5()
+{
+    echo 'Указываем порядок , в котором индексы массива будут использоваться функцией list(): <br>';
+    $foo = array(2 => 'a', 'foo' => 'b', 0 => 'c');
+    $foo[1] = 'd';
+    list($x, $y, $z) = $foo;
+    vardumpArray($foo, $x, $y, $z);
+}
+listExample5();
 ?>
 
 </body>
