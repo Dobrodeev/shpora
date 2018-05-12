@@ -509,6 +509,15 @@ function alreadyArrays()
     echo '<br>';
     $arrayRange = array_combine(range(11,14),range(1,4));
     printArray($arrayRange);
+    $prepend = array('00','01','02','03','04','05','06','07','08','09');
+    $hours     = array_merge($prepend,range(10, 23));
+    $minutes     = array_merge($prepend,range(10, 59));
+    $seconds     = $minutes;
+    printArray($prepend);
+    printArray(range(10,59));
+    printArray($seconds);
+    printArray($minutes);
+    printArray($hours);
     $card = [];
     $card[2]['heart'] = '2 heart.jpg';
     $card[2]['diamond'] = '2 diamond.jpg';
