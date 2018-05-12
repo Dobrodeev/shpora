@@ -684,6 +684,13 @@ function isAssocArray($arr)
 isAssocArray($arrAssoc);
 isAssocArray($arrNoAssoc);
 
+function forRangeExasmples()
+{
+//    $arr = range('A',  'Z');
+    $arr = range('AA', 'ZZ');
+    printArray($arr);
+}
+forRangeExasmples();
 ?>
 
 </body>
