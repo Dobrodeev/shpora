@@ -689,6 +689,8 @@ function forRangeExasmples()
 //    $arr = range('A',  'Z');
     $arr = range('AA', 'ZZ');
     printArray($arr);
+    $arrLow = range('a', 'z');
+    printArray($arrLow);
 }
 forRangeExasmples();
 ?>
