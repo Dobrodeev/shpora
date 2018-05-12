@@ -632,6 +632,59 @@ forServer();
         <option value="<?php echo($year); ?>"><?php echo($year); ?></option>
     <?php } ?>
 </select>
+<?php
+function createColumnsArray($end_column, $first_letters = '')
+{
+$columns = array();
+$length = strlen($end_column);
+$letters = range('A', 'Z');
+
+// Iterate over 26 letters.
+foreach ($letters as $letter) {
+// Paste the $first_letters before the next.
+$column = $first_letters . $letter;
+
+// Add the column to the final array.
+$columns[] = $column;
+
+// If it was the end column that was added, return the columns.
+if ($column == $end_column)
+return $columns;
+}
+
+// Add the column children.
+foreach ($columns as $column) {
+// Don't itterate if the $end_column was already set in a previous itteration.
+// Stop iterating if you've reached the maximum character length.
+if (!in_array($end_column, $columns) && strlen($column) < $length) {
+$new_columns = createColumnsArray($end_column, $column);
+// Merge the new columns which were created with the final columns array.
+$columns = array_merge($columns, $new_columns);
+}
+}
+
+return $columns;
+}
+// Return an array with all column names from A until and with BI.
+createColumnsArray('BI');
+$arrAssoc = [0, 1, 2, 'you'=>'my', 'black'=>'friday', 'lucky'=>7];
+$arrNoAssoc = [0, 1, 2, 3, 4, 5, 6, 7];
+function isAssocArray($arr)
+{
+    echo '<br>If associated array<br>';
+    printArray($arr);
+    if (array_keys($arr)===range(0, sizeof($arr)-1)) {
+// not associative array
+        echo 'not associative array<br>';
+    } else {
+// associative array
+        echo 'associative array<br>';
+    }
+}
+isAssocArray($arrAssoc);
+isAssocArray($arrNoAssoc);
+
 ?>
+
 </body>
 </html>
