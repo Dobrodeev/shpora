@@ -12,7 +12,15 @@
 <script src="assets/jquery-3.2.1.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <?php
-echo 'Поработаем с файлами: <br>';
+//Считываем текущее время
+$mtime = microtime();
+//Разделяем секунды и миллисекунды
+$mtime = explode(" ",$mtime);
+// Составляем одно число из секунд и миллисекунд
+// и записываем стартовое время в переменную
+$tstart = $mtime[1] + $mtime[0];
+
+/*echo 'Поработаем с файлами: <br>';
 $new_file=fopen("C:\xampp\htdocs\shpora\files\mytext.txt","a");
 //Переменная new_file получает указатель на файл name_file.
 
@@ -21,6 +29,21 @@ fwrite($new_file,"Это первая строка");
 
 fclose($new_file);
 //закрываем файл name_file
+*/
+echo date("Y-m-d H:i:s").'<br>';
+echo date("m").'<br>';
+echo date("d").'<br>';
+echo time().'<br>';
+echo mktime().'<br>';
+
+// Делаем все то же самое, чтобы получить текущее время
+$mtime = microtime();
+$mtime = explode(" ",$mtime);
+$mtime = $mtime[1] + $mtime[0];
+//Вычисляем разницу
+$totaltime = ($mtime - $tstart);
+// Выводим не экран
+printf ("Страница сгенерирована за %f секунд !", $totaltime);
 
 ?>
 </body>
