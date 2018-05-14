@@ -35,6 +35,7 @@ echo date("m").'<br>';
 echo date("d").'<br>';
 echo time().'<br>';
 echo mktime().'<br>';
+echo 'Сегодня '.date("z").' день '.date("o").' года <br>';
 
 // Делаем все то же самое, чтобы получить текущее время
 $mtime = microtime();
