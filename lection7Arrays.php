@@ -486,6 +486,16 @@ function alreadyArrays()
         echo $twoArray[$i].' ';
     }
     echo '<br>';
+    echo 'Гармонический ряд: <br>';
+    $S = 0;
+    $n = 100;
+    for ($i = 1; $i < $n; $i++)
+    {
+        echo round(1/$i, 3).' ';
+        $S += 1/$i;
+    }
+    echo '<br>';
+    echo 'Сумма первых '.$n.' членов гармонического ряда S = '.$S.'<br>';
     echo 'Создадим массив содержащий диапазон значений:<br>';
     foreach (range(0, 12) as $number) {
         echo $number.' ';
