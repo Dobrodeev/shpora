@@ -832,6 +832,20 @@ function someArrays()
             $simpleNumbers[] = $i;
     }
     printArray($simpleNumbers);
+    echo 'Массив нечетных чисел: <br>';
+    for ($i = 0; $i < 100; $i++)
+    {
+        if ($i % 2 != 0)
+            $nechetArray[] = $i;
+    }
+    printArray($nechetArray);
+    echo 'Массив четных чисел: <br>';
+    for ($i = 0; $i < 100; $i++)
+    {
+        if ($i % 2 == 0)
+            $chetArray[] = $i;
+    }
+    printArray($chetArray);
     echo '<br>';
     echo 'Создадим массив содержащий диапазон значений:<br>';
     foreach (range(0, 12) as $number) {
