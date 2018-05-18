@@ -31,12 +31,16 @@ fclose($new_file);
 //закрываем файл name_file
 */
 echo date("Y-m-d H:i:s").'<br>';
-echo date("m").'<br>';
-echo date("d").'<br>';
-echo time().'<br>';
+echo 'Теперешний месяц: '.date("m").'<br>';
+echo 'Теперешний день: '.date("d").'<br>';
+echo 'текущая метка времени Unix: '.time().'<br>';
+//mktime — Возвращает метку времени Unix для заданной даты
 echo mktime().'<br>';
 echo 'Сегодня '.date("z").' день '.date("o").' года <br>';
-
+echo date("Y-M-D").'<br>';
+echo date("Y-M-D", mktime(0, 0, 0, 1, 10, 1991)).'<br>';
+$lastday = mktime(0, 0, 0, 6, 0, 2018);
+echo strftime("Последний день мая 2018 г.: %d", $lastday).'<br>';
 // Делаем все то же самое, чтобы получить текущее время
 $mtime = microtime();
 $mtime = explode(" ",$mtime);
