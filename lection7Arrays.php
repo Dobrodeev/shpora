@@ -824,6 +824,15 @@ function someArrays()
     }
     echo '<br>';
     echo 'Сумма первых '.$n.' членов гармонического ряда S = '.$S.'<br>';
+    echo 'Массив простых чисел: <br>';
+    $simpleNumbers = [1, 3, 5];
+    for ($i = 7; $i < 100; $i++)
+    {
+        if (($i % 2 != 0) && ($i % 3 != 0) && ($i % 5 != 0))
+            $simpleNumbers[] = $i;
+    }
+    printArray($simpleNumbers);
+    echo '<br>';
     echo 'Создадим массив содержащий диапазон значений:<br>';
     foreach (range(0, 12) as $number) {
         echo $number.' ';
