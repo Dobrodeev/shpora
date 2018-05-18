@@ -461,7 +461,7 @@ function alreadyArrays()
         echo $factorial.' ';
     }
     echo '<br>';
-    function fibonacci($n)
+    /*function fibonacci($n)
     {
         if ($n < 3) {
             return 1;
@@ -473,7 +473,7 @@ function alreadyArrays()
     echo 'Массив чесел Фибоначчи: <br>';
     for ($n = 1; $n <= 16; $n++) {
         echo(fibonacci($n) . ", ");
-    }
+    }*/
 //    echo("...\n");
     echo '<br>';
     echo 'Массив степеней двойки:<br>';
@@ -758,6 +758,111 @@ function listExample5()
     vardumpArray($foo, $x, $y, $z);
 }
 listExample5();
+echo '<hr>';
+function someArrays()
+{
+    echo 'Массив квадратов: <br>';
+    $squaresArray = [];
+    $j = 10;
+    for ($i = 0; $i < 10; $i++)
+    {
+        $j++;
+        $squaresArray[$i] = $j*$j;
+        echo $squaresArray[$i].' ';
+    }
+    echo '<br>';
+    echo 'Массив кубов:<br>';
+    $cubesArray = [];
+    $k = 0;
+    for ($i = 0; $i < 10; $i++)
+    {
+        $k++;
+        $cubesArray[$i] = $k*$k*$k;
+        echo $cubesArray[$i].' ';
+    }
+    echo '<br>';
+    echo 'Массив факториалов: <br>';
+    $factorial = 1;
+    for ($i = 1; $i < 10; $i++)
+    {
+        $factorial *= $i;
+        echo $factorial.' ';
+    }
+    echo '<br>';
+    function fibonacci($n)
+    {
+        if ($n < 3) {
+            return 1;
+        }
+        else {
+            return fibonacci($n-1) + fibonacci($n-2);
+        }
+    }
+    echo 'Массив чесел Фибоначчи: <br>';
+    for ($n = 1; $n <= 16; $n++) {
+        echo(fibonacci($n) . ", ");
+    }
+//    echo("...\n");
+    echo '<br>';
+    echo 'Массив степеней двойки:<br>';
+    $twoArray = [];
+    $k = 2;
+    for ($i = 0; $i < 10; $i++)
+    {
+        $twoArray[$i] = $k;
+        $k *= 2;
+        echo $twoArray[$i].' ';
+    }
+    echo '<br>';
+    echo 'Гармонический ряд: <br>';
+    $S = 0;
+    $n = 100;
+    for ($i = 1; $i < $n; $i++)
+    {
+        echo round(1/$i, 3).' ';
+        $S += 1/$i;
+    }
+    echo '<br>';
+    echo 'Сумма первых '.$n.' членов гармонического ряда S = '.$S.'<br>';
+    echo 'Создадим массив содержащий диапазон значений:<br>';
+    foreach (range(0, 12) as $number) {
+        echo $number.' ';
+    }
+    echo '<br>';
+    $catallanArray = [1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, 58786, 208012, 742900, 2674440, 9694845, 35357670, 129644790, 477638700, 1767263190, 6564120420, 24466267020, 91482563640, 343059613650, 1289904147324, 4861946401452];
+    echo 'Числа Каталлана: <br>';
+//    printArray($catallanArray);
+//    print_r($catallanArray);
+    for ($i = 0; $i < count($catallanArray); $i++)
+    {
+        echo $catallanArray[$i].' ';
+    }
+    echo '<br>';
+    echo 'Создадим массив содержащий диапазон значений с определенным шагом:<br>';
+    foreach (range(0, 100, 10) as $number) {
+        echo $number.' ';
+    }
+    // Использование последовательности знаков
+// array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i');
+    echo '<br>Выведем последовательность знаков:<br>';
+    foreach (range('a', 'i') as $letter) {
+        echo $letter.' ';
+    }
+// array('c', 'b', 'a');
+    echo '<br>А теперь в обратном порядке:<br>';
+    foreach (range('c', 'a') as $letter) {
+        echo $letter.' ';
+    }
+    echo '<br>';
+    $arrayRange = array_combine(range(11,14),range(1,4));
+    printArray($arrayRange);
+    echo 'Создами имитацию бросания двух игральных костей: <br>';
+    $firstZara = mt_rand(1, 6);
+    $secondZara = rand(1, 6);
+    echo 'Выбросили игральные кости: '.$firstZara.' '.$secondZara.'<br>';
+}
+
+someArrays();
 ?>
 
 </body>
