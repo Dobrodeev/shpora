@@ -883,6 +883,17 @@ function someArrays()
     $firstZara = mt_rand(1, 6);
     $secondZara = rand(1, 6);
     echo 'Выбросили игральные кости: '.$firstZara.' '.$secondZara.'<br>';
+    echo 'Теперь максимум и минимум: <br>';
+    $arrayFirst = [1, 2, 3, 4, 5, 6, 7];
+    $arraySecond = [324, 443, 894];
+    printArray($arrayFirst);
+    printArray($arraySecond);
+    echo 'Max array: <br>';
+    $maxArray = max($arrayFirst, $arraySecond);
+    printArray($maxArray);
+    echo 'min array: <br>';
+    $minArray = min($arrayFirst, $arraySecond);
+    printArray($minArray);
 }
 
 someArrays();
