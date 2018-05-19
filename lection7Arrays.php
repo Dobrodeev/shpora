@@ -894,6 +894,36 @@ function someArrays()
     echo 'min array: <br>';
     $minArray = min($arrayFirst, $arraySecond);
     printArray($minArray);
+    // array_splice()
+    $input = array("red", "green", "blue", "yellow");
+    echo '$input до применения array_splice():<br>';
+    printArray($input);
+    array_splice($input, 2);
+    echo '$input after применения array_splice():<br>';
+// $input теперь array("red", "green")
+    printArray($input);
+    $input = array("red", "green", "blue", "yellow");
+    array_splice($input, 1, -1);
+// $input теперь array("red", "yellow")
+    echo '$input after применения array_splice($input, 1, -1):<br>';
+    printArray($input);
+    $input = array("red", "green", "blue", "yellow");
+    array_splice($input, 1, count($input), "orange");
+    echo '$input after применения array_splice($input, 1, count($input), "orange"):<br>';
+    printArray($input);
+// $input теперь array("red", "orange")
+
+    $input = array("red", "green", "blue", "yellow");
+    array_splice($input, -1, 1, array("black", "maroon"));
+    echo '$input after применения array_splice($input, -1, 1, array("black", "maroon")):<br>';
+    printArray($input);
+// $input теперь array("red", "green", "blue", "black", "maroon")
+
+    $input = array("red", "green", "blue", "yellow");
+    array_splice($input, 3, 0, "purple");
+    echo '$input after применения array_splice($input, 3, 0, "purple"):<br>';
+    printArray($input);
+// $input теперь array("red", "green", "blue", "purple", "yellow");
 }
 
 someArrays();
