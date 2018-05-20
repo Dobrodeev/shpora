@@ -974,6 +974,27 @@ function someArrays()
     echo 'end() = '.$mode.'<br>';
     $mode = current($transport); // $mode = 'plane';
     echo 'current() = '.$mode.'<br>';
+    $mode = reset($transport);
+    echo 'reset() = '.$mode.'<br>'; // $mode = 'foot';
+//    Пример #1 Примеры использования each()
+    echo 'Применение функции each():<br>';
+    $foo = array("bob", "fred", "jussi", "jouni", "egon", "marliese");
+    printArray($foo);
+    $bar = each($foo);
+    printArray($bar);
+    echo 'Next example for each() with associated array: <br>';
+    $foo = array("Robert" => "Bob", "Seppo" => "Sepi");
+    $bar = each($foo);
+    printArray($foo);
+    printArray($bar);
+//    Пример #2 Обход массива функцией each()
+    $fruit = array('a' => 'apple', 'b' => 'banana', 'c' => 'cranberry');
+    printArray($fruit);
+//    reset($fruit);
+    end($fruit);
+    while (list($key, $val) = each($fruit)) {
+        echo "$key => $val\n";
+    }
 }
 someArrays();
 ?>
