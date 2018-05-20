@@ -995,7 +995,52 @@ function someArrays()
     while (list($key, $val) = each($fruit)) {
         echo "$key => $val\n";
     }
+//    Пример #1 Пример использования reset()
+    echo 'reset() example <br>';
+    $array = array('первый шаг', 'второй шаг', 'третий шаг', 'четвертый шаг');
+    printArray($array);
+// по умолчанию указатель указывает на первый элемент
+    echo 'current($array)<br>';
+    echo current($array) . "<br />\n"; // "первый шаг"
+
+// пропускаем два шага
+    next($array);
+    next($array);
+    echo 'next($array); next($array)<br>';
+    echo 'current($array)<br>';
+    echo current($array) . "<br />\n"; // "третий шаг"
+
+// сбрасываем указатель, тем самым возвращаемся к первому шагу
+    reset($array);
+    echo 'reset($array)<br>';
+    echo 'current($array)<br>';
+    echo current($array) . "<br />\n"; // "первый шаг"
+    echo 'prev($array)<br>';
+    echo 'pos($array)<br>';
+    prev($array);
+    echo pos($array).'<br>';
+    echo 'pos() example pos()===each() <br>';
+    $countries = array("Brazil", "England", "Japan", "France");
+    printArray($countries);
+    // Get the current position
+    echo 'pos($countries) = '.pos($countries).'<br>'; // print Brazil
+
+    // Go to next position
+    echo 'next() = '.next($countries).'<br>'; // print England
+
+    // Current position
+    echo 'pos() = '.pos($countries).'<br>'; //  print England
+
+    // Previous position
+    echo 'prev() = '.prev($countries).'<br>'; // print Brazil
+
+    // End Position
+    echo 'end() = '.end($countries).'<br>'; // print France
+
+    // Current position
+    echo 'pos() = '.pos($countries).'<br>'; // print France
 }
+
 someArrays();
 ?>
 
