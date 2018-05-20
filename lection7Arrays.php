@@ -1051,6 +1051,19 @@ function someArrays()
 
     $result = compact("event", "nothing_here", $location_vars);
     printArray($result);
+    $forExtract = extract($result);
+    echo $event.' in '.$city.'<br>';
+//    extract — Импортирует переменные из массива в текущую таблицу символов
+    /* Предположим, что $var_array - это массив, полученный в результате
+   wddx_deserialize */
+
+    $size = "large";
+    $var_array = array("color" => "blue",
+        "size"  => "medium",
+        "shape" => "sphere");
+    extract($var_array, EXTR_PREFIX_SAME, "wddx");
+
+    echo "$color, $size, $shape, $wddx_size\n";
 }
 
 someArrays();
