@@ -924,6 +924,23 @@ function someArrays()
     echo '$input after применения array_splice($input, 3, 0, "purple"):<br>';
     printArray($input);
 // $input теперь array("red", "green", "blue", "purple", "yellow");
+//    Пример #1 Пример использования shuffle()
+    echo 'Example shuffle(range(1,20)):<br>';
+    $numbers = range(1, 20);
+    shuffle($numbers);
+    foreach ($numbers as $number) {
+        echo "$number ";
+    }
+    echo '<br>';
+    printArray($numbers);
+    echo 'Выберем 3 случайных элемента массива $numbers: <br>';
+    $keyFromNumbers = array_rand($numbers, 3);
+    printArray($keyFromNumbers);
+//    echo $numbers[$keyFromNumbers[0]].' '.$keyFromNumbers[$keyFromNumbers[1]].' '.$numbers[$keyFromNumbers[2]].'<br>';
+    echo $numbers[$keyFromNumbers[0]].'<br>';
+    echo $numbers[$keyFromNumbers[1]].'<br>';
+    echo $numbers[$keyFromNumbers[2]].'<br>';
+//    echo $numbers[$keyFromNumbers[0]].'<br>';
 }
 
 someArrays();
