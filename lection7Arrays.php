@@ -764,40 +764,37 @@ function someArrays()
     echo 'Массив квадратов: <br>';
     $squaresArray = [];
     $j = 10;
-    for ($i = 0; $i < 10; $i++)
-    {
+    for ($i = 0; $i < 10; $i++) {
         $j++;
-        $squaresArray[$i] = $j*$j;
-        echo $squaresArray[$i].' ';
+        $squaresArray[$i] = $j * $j;
+        echo $squaresArray[$i] . ' ';
     }
     echo '<br>';
     echo 'Массив кубов:<br>';
     $cubesArray = [];
     $k = 0;
-    for ($i = 0; $i < 10; $i++)
-    {
+    for ($i = 0; $i < 10; $i++) {
         $k++;
-        $cubesArray[$i] = $k*$k*$k;
-        echo $cubesArray[$i].' ';
+        $cubesArray[$i] = $k * $k * $k;
+        echo $cubesArray[$i] . ' ';
     }
     echo '<br>';
     echo 'Массив факториалов: <br>';
     $factorial = 1;
-    for ($i = 1; $i < 10; $i++)
-    {
+    for ($i = 1; $i < 10; $i++) {
         $factorial *= $i;
-        echo $factorial.' ';
+        echo $factorial . ' ';
     }
     echo '<br>';
     function fibonacci($n)
     {
         if ($n < 3) {
             return 1;
-        }
-        else {
-            return fibonacci($n-1) + fibonacci($n-2);
+        } else {
+            return fibonacci($n - 1) + fibonacci($n - 2);
         }
     }
+
     echo 'Массив чесел Фибоначчи: <br>';
     for ($n = 1; $n <= 16; $n++) {
         echo(fibonacci($n) . ", ");
@@ -807,41 +804,36 @@ function someArrays()
     echo 'Массив степеней двойки:<br>';
     $twoArray = [];
     $k = 2;
-    for ($i = 0; $i < 10; $i++)
-    {
+    for ($i = 0; $i < 10; $i++) {
         $twoArray[$i] = $k;
         $k *= 2;
-        echo $twoArray[$i].' ';
+        echo $twoArray[$i] . ' ';
     }
     echo '<br>';
     echo 'Гармонический ряд: <br>';
     $S = 0;
     $n = 100;
-    for ($i = 1; $i < $n; $i++)
-    {
-        echo round(1/$i, 3).' ';
-        $S += 1/$i;
+    for ($i = 1; $i < $n; $i++) {
+        echo round(1 / $i, 3) . ' ';
+        $S += 1 / $i;
     }
     echo '<br>';
-    echo 'Сумма первых '.$n.' членов гармонического ряда S = '.$S.'<br>';
+    echo 'Сумма первых ' . $n . ' членов гармонического ряда S = ' . $S . '<br>';
     echo 'Массив простых чисел: <br>';
     $simpleNumbers = [1, 3, 5];
-    for ($i = 7; $i < 100; $i++)
-    {
+    for ($i = 7; $i < 100; $i++) {
         if (($i % 2 != 0) && ($i % 3 != 0) && ($i % 5 != 0))
             $simpleNumbers[] = $i;
     }
     printArray($simpleNumbers);
     echo 'Массив нечетных чисел: <br>';
-    for ($i = 0; $i < 100; $i++)
-    {
+    for ($i = 0; $i < 100; $i++) {
         if ($i % 2 != 0)
             $nechetArray[] = $i;
     }
     printArray($nechetArray);
     echo 'Массив четных чисел: <br>';
-    for ($i = 0; $i < 100; $i++)
-    {
+    for ($i = 0; $i < 100; $i++) {
         if ($i % 2 == 0)
             $chetArray[] = $i;
     }
@@ -849,40 +841,39 @@ function someArrays()
     echo '<br>';
     echo 'Создадим массив содержащий диапазон значений:<br>';
     foreach (range(0, 12) as $number) {
-        echo $number.' ';
+        echo $number . ' ';
     }
     echo '<br>';
     $catallanArray = [1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, 58786, 208012, 742900, 2674440, 9694845, 35357670, 129644790, 477638700, 1767263190, 6564120420, 24466267020, 91482563640, 343059613650, 1289904147324, 4861946401452];
     echo 'Числа Каталлана: <br>';
 //    printArray($catallanArray);
 //    print_r($catallanArray);
-    for ($i = 0; $i < count($catallanArray); $i++)
-    {
-        echo $catallanArray[$i].' ';
+    for ($i = 0; $i < count($catallanArray); $i++) {
+        echo $catallanArray[$i] . ' ';
     }
     echo '<br>';
     echo 'Создадим массив содержащий диапазон значений с определенным шагом:<br>';
     foreach (range(0, 100, 10) as $number) {
-        echo $number.' ';
+        echo $number . ' ';
     }
     // Использование последовательности знаков
 // array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i');
     echo '<br>Выведем последовательность знаков:<br>';
     foreach (range('a', 'i') as $letter) {
-        echo $letter.' ';
+        echo $letter . ' ';
     }
 // array('c', 'b', 'a');
     echo '<br>А теперь в обратном порядке:<br>';
     foreach (range('c', 'a') as $letter) {
-        echo $letter.' ';
+        echo $letter . ' ';
     }
     echo '<br>';
-    $arrayRange = array_combine(range(11,14),range(1,4));
+    $arrayRange = array_combine(range(11, 14), range(1, 4));
     printArray($arrayRange);
     echo 'Создами имитацию бросания двух игральных костей: <br>';
     $firstZara = mt_rand(1, 6);
     $secondZara = rand(1, 6);
-    echo 'Выбросили игральные кости: '.$firstZara.' '.$secondZara.'<br>';
+    echo 'Выбросили игральные кости: ' . $firstZara . ' ' . $secondZara . '<br>';
     echo 'Теперь максимум и минимум: <br>';
     $arrayFirst = [1, 2, 3, 4, 5, 6, 7];
     $arraySecond = [324, 443, 894];
@@ -937,9 +928,9 @@ function someArrays()
     $keyFromNumbers = array_rand($numbers, 3);
     printArray($keyFromNumbers);
 //    echo $numbers[$keyFromNumbers[0]].' '.$keyFromNumbers[$keyFromNumbers[1]].' '.$numbers[$keyFromNumbers[2]].'<br>';
-    echo $numbers[$keyFromNumbers[0]].'<br>';
-    echo $numbers[$keyFromNumbers[1]].'<br>';
-    echo $numbers[$keyFromNumbers[2]].'<br>';
+    echo $numbers[$keyFromNumbers[0]] . '<br>';
+    echo $numbers[$keyFromNumbers[1]] . '<br>';
+    echo $numbers[$keyFromNumbers[2]] . '<br>';
 //    echo $numbers[$keyFromNumbers[0]].'<br>';
 //    Пример #1 Пример использования key()
     echo 'Example key(): <br>';
@@ -954,7 +945,7 @@ function someArrays()
 // значения которых равны "apple"
     while ($fruit_name = current($array)) {
         if ($fruit_name == 'apple') {
-            echo key($array).'<br />';
+            echo key($array) . '<br />';
         }
         next($array);
     }
@@ -963,19 +954,19 @@ function someArrays()
     $transport = array('foot', 'bike', 'car', 'plane');
     printArray($transport);
     $mode = current($transport); // $mode = 'foot';
-    echo 'current() = '.$mode.'<br>';
+    echo 'current() = ' . $mode . '<br>';
     $mode = next($transport);    // $mode = 'bike';
-    echo 'next() = '.$mode.'<br>';
+    echo 'next() = ' . $mode . '<br>';
     $mode = current($transport); // $mode = 'bike';
-    echo 'current() = '.$mode.'<br>';
+    echo 'current() = ' . $mode . '<br>';
     $mode = prev($transport);    // $mode = 'foot';
-    echo 'prev() = '.$mode.'<br>';
+    echo 'prev() = ' . $mode . '<br>';
     $mode = end($transport);     // $mode = 'plane';
-    echo 'end() = '.$mode.'<br>';
+    echo 'end() = ' . $mode . '<br>';
     $mode = current($transport); // $mode = 'plane';
-    echo 'current() = '.$mode.'<br>';
+    echo 'current() = ' . $mode . '<br>';
     $mode = reset($transport);
-    echo 'reset() = '.$mode.'<br>'; // $mode = 'foot';
+    echo 'reset() = ' . $mode . '<br>'; // $mode = 'foot';
 //    Пример #1 Примеры использования each()
     echo 'Применение функции each():<br>';
     $foo = array("bob", "fred", "jussi", "jouni", "egon", "marliese");
@@ -1018,27 +1009,48 @@ function someArrays()
     echo 'prev($array)<br>';
     echo 'pos($array)<br>';
     prev($array);
-    echo pos($array).'<br>';
+    echo pos($array) . '<br>';
     echo 'pos() example pos()===each() <br>';
     $countries = array("Brazil", "England", "Japan", "France");
     printArray($countries);
     // Get the current position
-    echo 'pos($countries) = '.pos($countries).'<br>'; // print Brazil
+    echo 'pos($countries) = ' . pos($countries) . '<br>'; // print Brazil
 
     // Go to next position
-    echo 'next() = '.next($countries).'<br>'; // print England
+    echo 'next() = ' . next($countries) . '<br>'; // print England
 
     // Current position
-    echo 'pos() = '.pos($countries).'<br>'; //  print England
+    echo 'pos() = ' . pos($countries) . '<br>'; //  print England
 
     // Previous position
-    echo 'prev() = '.prev($countries).'<br>'; // print Brazil
+    echo 'prev() = ' . prev($countries) . '<br>'; // print Brazil
 
     // End Position
-    echo 'end() = '.end($countries).'<br>'; // print France
+    echo 'end() = ' . end($countries) . '<br>'; // print France
 
     // Current position
-    echo 'pos() = '.pos($countries).'<br>'; // print France
+    echo 'pos() = ' . pos($countries) . '<br>'; // print France
+//    compact — Создает массив, содержащий названия переменных и их значения
+    $var1 = 'первая переменная';
+    $var2 = 'вторая';
+    $var3 = 'третья';
+    $var4 = 'fourth';
+    $var5 = 'fifth';
+    $var6 = 'six';
+    $var7 = 'sevens';
+    $var8 = 'some var';
+    echo 'Example for compact() function: <br>';
+    $result = compact('var1', 'var2', 'var3', 'var4', 'var5', 'var6', 'var7', 'var8');
+    printArray($result);
+    echo 'Example for compact() from documentation php.net <br>';
+    $city  = "San Francisco";
+    $state = "CA";
+    $event = "SIGGRAPH";
+
+    $location_vars = array("city", "state");
+
+    $result = compact("event", "nothing_here", $location_vars);
+    printArray($result);
 }
 
 someArrays();
