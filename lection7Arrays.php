@@ -967,9 +967,13 @@ function someArrays()
     $mode = next($transport);    // $mode = 'bike';
     echo 'next() = '.$mode.'<br>';
     $mode = current($transport); // $mode = 'bike';
+    echo 'current() = '.$mode.'<br>';
     $mode = prev($transport);    // $mode = 'foot';
+    echo 'prev() = '.$mode.'<br>';
     $mode = end($transport);     // $mode = 'plane';
+    echo 'end() = '.$mode.'<br>';
     $mode = current($transport); // $mode = 'plane';
+    echo 'current() = '.$mode.'<br>';
 }
 someArrays();
 ?>
