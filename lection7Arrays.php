@@ -941,8 +941,36 @@ function someArrays()
     echo $numbers[$keyFromNumbers[1]].'<br>';
     echo $numbers[$keyFromNumbers[2]].'<br>';
 //    echo $numbers[$keyFromNumbers[0]].'<br>';
-}
+//    Пример #1 Пример использования key()
+    echo 'Example key(): <br>';
+    $array = array(
+        'fruit1' => 'apple',
+        'fruit2' => 'orange',
+        'fruit3' => 'grape',
+        'fruit4' => 'apple',
+        'fruit5' => 'apple');
 
+// этот цикл выведет все ключи ассоциативного массива,
+// значения которых равны "apple"
+    while ($fruit_name = current($array)) {
+        if ($fruit_name == 'apple') {
+            echo key($array).'<br />';
+        }
+        next($array);
+    }
+    //Пример #1 Пример использования current() и дружественных функций
+    echo 'current() example <br>';
+    $transport = array('foot', 'bike', 'car', 'plane');
+    printArray($transport);
+    $mode = current($transport); // $mode = 'foot';
+    echo 'current() = '.$mode.'<br>';
+    $mode = next($transport);    // $mode = 'bike';
+    echo 'next() = '.$mode.'<br>';
+    $mode = current($transport); // $mode = 'bike';
+    $mode = prev($transport);    // $mode = 'foot';
+    $mode = end($transport);     // $mode = 'plane';
+    $mode = current($transport); // $mode = 'plane';
+}
 someArrays();
 ?>
 
