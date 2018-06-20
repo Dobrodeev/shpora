@@ -9,7 +9,7 @@
 class BeautyFractionOutput extends Fraction
 {
     /// *** Fraction here
-    public function print()
+    public function printFraction()
     {
         //need code for printing in view:
 
@@ -29,6 +29,11 @@ class BeautyFractionOutput extends Fraction
         15
 
         */
+
+    }
+
+    public function simplify()
+    {
 
     }
 }

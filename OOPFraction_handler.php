@@ -12,17 +12,16 @@
 <script src="assets/jquery-3.2.1.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <?php
-$fr4 = new Animal();
-$fr3 = new FractionOutput(5,5);
+//$fr4 = new Animal();
+//$fr3 = new FractionOutput(5,5);
 
 $fr1 = new Fraction(1,2);
 $fr2 = new Fraction(3,5);
 
-
+$fr1->addFraction($fr1);
 $fr1->addFraction($fr2);
-$fr1->addFraction($fr3);
-
-$fr1->simplify();
+$fraction = new BeautyFractionOutput();
+$fraction->simplify();
 echo $fr1->toString();
 ?>
 </body>
