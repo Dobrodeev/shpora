@@ -1,15 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dobrodeev
- * Date: 20.06.2018
- * Time: 16:20
- */
 
 class Fraction
 {
-    private $numerator;
-    private $denominator;
+    protected $numerator;
+    protected $denominator;
 
     public function addFraction (Fraction $fraction)
     {
@@ -31,8 +25,25 @@ class Fraction
         }
     }
 
+    public function simplify()
+    {
+        $i = 10;
+        while ($i > 1)
+        {
+            if (($this->numerator % $i == 0) && ($this->denominator % $i == 0))
+            {
+                $this->numerator /= $i;
+                $this->denominator /= $i;
+                $i = 11;
+            }
+            $i--;
+        }
+    }
+
     public function toString()
     {
         return $this->numerator . "/" . $this->denominator;
     }
+
+
 }
