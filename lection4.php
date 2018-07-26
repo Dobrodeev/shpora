@@ -31,18 +31,43 @@ echo '</table>';
 <h4>Пример формы</h4>
 <form action="#" method="post" name="reg" class="form-horizontal" enctype="multipart/form-data">
     <div class="control-group">
-        <input type="text" placeholder="Vase Imya"  required name=arr['reg']['firstname']><br>
-        <input type="text" placeholder="Vasha Familia"  required name=arr['reg']['lastname']><br>
-        <input type="password" placeholder="Parol" required name=arr['reg']['password'] formmethod="post" ><br>
+        <input type="text" placeholder="Your name"  required name=arr[reg][firstname]><br>
+        <input type="text" placeholder="Your surname"  required name=arr[reg][lastname]><br>
+        <input type="text" placeholder="patronymic" required name="arr[reg][patronymiv]"><br>
+        <input type="text" placeholder="phone" required name="arr[reg][phone]"><br>
+        <input type="password" placeholder="password" required name=arr[reg][password] formmethod="post" ><br>
         <input type="file" name="userfile"><br><br>
-        <span>Ваш пол</span><br>
-        <label for="m">male</label> <input type='radio' name="arr['reg'][pol]" value="male"  id="m">
-        <label for="z">female</label> <input type='radio' name="arr['reg'][pol]" value="female"  id="z"><br>
-        <span>Ваш город</span><br>
+        <span>Ваш пол:</span><br>
+        <label for="m">male</label> <input type='radio' name="arr[reg][pol]" value="male"  id="m">
+        <label for="z">female</label> <input type='radio' name="arr[reg][pol]" value="female"  id="z"><br>
+        <span>Ваш город:</span><br>
         <select name="arr[gorod][]">
             <option value="Kiev">Kiev</option>
             <option value="Kharkov">Kharkiv</option>
-            <option value="Lviv">Lviv</option>
+            <option value="Lviv">Lviv
+            <option value="Lutsck">Lutsk</option>
+            <option value="Rovno">Rovno</option>
+            <option value="Hmelnickii">Hmelnickii</option>
+            <option value="Ternopil">Ternopil</option>
+            <option value="Ivano-Francovsc">Ivano-Francovsc</option>
+            <option value="Chercasy">Chercasy</option>
+            <option value="Chernovci">Chernovci</option>
+            <option value="Chernigov">Chernigov</option>
+            <option value="Fastov">Fastov</option>
+            <option value="Sarny">Sarny</option>
+            <option value="Mirgorod">Mirgorod</option>
+            <option value="Sumy">Sumy</option>
+            <option value="Herdon">Herson</option>
+            <option value="Odessa">Odessa</option>
+            <option value="Nicolaev">Nicolaev</option>
+            <option value="Kirovograd">Kirovograd</option>
+            <option value="Uzgorod">Uzgorod</option>
+            <option value="Mucachevo">Mucachevo</option>
+            <option value="Hust">Hust</option>
+            <option value="Solotvino">Solotvino</option>
+            <option value="Dubno">Dubno</option>
+            <option value="Irpen">Irpen</option>
+            <option value="Bucha">Bucha</option>
         </select><br><br>
         <div class="form-actions">
             <input type="submit" value="Регистрация" name="go" class="btn btn-primary">
@@ -51,14 +76,25 @@ echo '</table>';
     </div>
 </form>
 <?php
-if (isset($_POST['go'])) {
+if (isset($_POST['go']))
+{
     echo '<pre>';
     print_r($_POST['arr']);
     echo '</pre>';
-
+    $array = $_POST['arr'];
     echo '<pre>';
-    var_dump($_POST['arr']);
+    print_r($array);
     echo '</pre>';
+    echo '<pre>';
+    var_dump($array);
+    echo '</pre>';
+    echo $array['gorod'][0].'<br>';
+    echo $array['reg']['firstname'].'<br>';
+    $someoneArray = [
+            'registered'=>['age'=>27, 'job'=>'nothing'],
+        'hobbies'=>['boxing', 'kickboxing', 'muai-tai', 'kosiki karate']
+    ];
+    echo $someoneArray['registered']['age'].'<br>';
 }
 
 function arrayExample()
