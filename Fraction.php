@@ -2,8 +2,11 @@
 
 class Fraction
 {
-    protected $numerator;
-    protected $denominator;
+//    protected $numerator;
+//    protected $denominator;
+    public $numerator;
+    public $denominator;
+    public $someone;
 
     public function addFraction (Fraction $fraction)
     {

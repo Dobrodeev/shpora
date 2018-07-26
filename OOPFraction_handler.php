@@ -12,9 +12,7 @@
 <script src="assets/jquery-3.2.1.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <?php
-//$fr4 = new Animal();
-//$fr3 = new FractionOutput(5,5);
-//require_once 'Fraction.php';
+
 spl_autoload_register(function ($class) {
     include $class . '.php';
 });
@@ -23,21 +21,32 @@ $fr2 = new Fraction(3,5);
 
 $fr1->addFraction($fr2);
 $fr1->addFraction($fr2);
-
+echo 'Сумма дробей: <br>';
 echo $fr1->toString();
 echo '<br>После упрощения: <br>';
 $fr1->simplify();
 echo $fr1->toString();
 echo '<hr>';
 $fr3 = new Fraction(16000, 800);
+print_r($fr3);
+//$fraction->simpleOutput($fr3);
 echo $fr3->toString();
 echo '<br>После упрощения: <br>';
 $fr3->simplify();
 echo $fr3->toString();
-//$fraction = new BeautyFractionOutput();
-//$fraction->printFraction($fr1);
-//$fraction->simplify();
 
+$fr4 = new BeautyFraction();
+echo '<br>';
+print_r($fr3);
+echo '<br>';
+$fr4->niceOutput($fr3);
+echo '<br>';
+$fraction = new BeautyFractionOutput();
+$fraction->printFraction(1145,19);
+$fraction->simplification(743,51);
+$fr5 = new Fraction(434,34);
+print_r($fr5);
+$fraction->simpleOutput($fr5);
 ?>
 </body>
 </html>

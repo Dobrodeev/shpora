@@ -8,9 +8,11 @@
 
 class Base
 {
-    public $var;
+    public $publicVar;
+    private $privateVar;
+    protected $protectedVar;
     public function printVar()
     {
-        echo $this->var;
+        echo $this->publicVar;
     }
 }

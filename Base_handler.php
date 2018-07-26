@@ -19,18 +19,20 @@ spl_autoload_register(function ($class_name)
 {
     include $class_name.'.php';
 });
-$baseObject = new Base();
-echo '<pre>';
-print_r($baseObject);
-print_r(get_class_methods($baseObject));
-echo '</pre>';
-
-$derivedObject = new Derived();
-echo '<pre>';
-print_r($derivedObject);
-print_r(get_class_methods($derivedObject));
-echo '</pre>';
-
+//$baseObject = new Base();
+//echo '<pre>';
+//print_r($baseObject);
+//print_r(get_class_methods($baseObject));
+//echo '</pre>';
+//
+//$derivedObject = new Derived();
+//echo '<pre>';
+//print_r($derivedObject);
+//print_r(get_class_methods($derivedObject));
+//echo '</pre>';
+$object1 = new Base();
+$object2 = new Derived();
+$object2->printVal();
 ?>
 </body>
 </html>

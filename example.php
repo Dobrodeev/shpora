@@ -50,6 +50,84 @@
     $getting = 'get something';
     $db_conn = 'DELETE FROM shedule WHERE id="' . $getting . '"';
     echo $db_conn.'<br>';
+
+
+function clearMessage($message)
+{
+    $m = trim($message);
+    $m = htmlspecialchars($message);
+    $m = strip_tags($message);
+    return $m;
+}
+/*
+if ($_POST['go'])
+{
+    if ($_POST['message'])
+    {
+        echo '<pre>';
+        print_r($_POST);
+        echo '</pre>';
+        $message = clearMessage($_POST['message']);
+        $surname = implode(',',$_POST['surname']);
+        $email = implode(',', $_POST['email']);
+        }
+        }
+*/
+$array = array('имя', 'почта', 'телефон');
+$comma_separated = implode(",", $array);
+$second_variant = implode(' ', $array);
+$third_variant = implode('',$array);
+echo $comma_separated; // имя,почта,телефон
+
+// Пустая строка при использовании пустого массива:
+var_dump(implode('hello', array())); // string(0) ""
+    echo '<br>';
+echo 'Выведем через пробел: <br>';
+echo '<pre>';
+print_r($second_variant);
+echo '</pre>';
+echo 'Выведем без пробелов: <br>';
+echo '<pre>';
+print_r($third_variant);
+echo '</pre>';
+echo 'Обьединим элементы массива в строку: <br>';
+$arrayForImplode =['lastname', 'email', 'phone'];
+echo 'Было: <br>';
+echo '<pre>';
+print_r($arrayForImplode);
+echo '</pre>';
+$separated = implode(",", $arrayForImplode);
+echo $separated; // lastname,email,phone
+$names = array('Valera', 'Victor', 'Vane');
+echo 'Name: '.$names.'<br>';
+$yourName = implode(' ',$names);
+echo 'It will be your name: '.$yourName.'<br>';
+
+    $elements = array('a', 'b', 'c');
+
+    echo "<ul><li>" . implode("</li><li>", $elements) . "</li></ul>";
+
+    $id_nums = array(1,6,12,18,24);
+    echo 'айдишники $id_name: <br>';
+    echo '<pre>';
+    print_r($id_nums);
+    echo '</pre>';
+    echo 'Выведем массив $id_nums: <br>';
+    echo $id_nums.'<br>';
+    $id_nums = implode(", ", $id_nums);
+    echo 'Список $id_name получили из массива и сделали строкой: <br>';
+    echo $id_nums.'<br>';
+    $sqlquery = "Select name,email,phone from usertable where user_id IN ($id_nums)";
+
+    // $sqlquery becomes "Select name,email,phone from usertable where user_id IN (1,6,12,18,24)"
+    $test = ["one",2,3,"four",5.67];
+    echo '<pre>';
+    print_r($test);
+    echo '</pre>';
+    echo 'Сделаем все элементы массива строковыми: <br>';
+    $test=implode(["one",2,3,"four",5.67]);
+    echo $test;
+    //outputs: "one23four5.67"
     ?>
 </body>
 </html>

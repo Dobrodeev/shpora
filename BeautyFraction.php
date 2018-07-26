@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dobrodeev
- * Date: 21.06.2018
- * Time: 18:01
- */
 
 class BeautyFraction extends Fraction
 {
@@ -13,7 +7,32 @@ class BeautyFraction extends Fraction
   3 --
     15
     */
-    private $cel;
+    private $intPart;
 
+    public function niceOutput()
+    {
+//        $chus = $this->numerator;
+//        $znam = $this->denominator;
+//        $this->someone;
+//        $this->
+//        echo $chus.' / '.$znam.'<br>';
+//        $counter = 0;
+//        $tire = '-';
+//        while ($this->numerator % 10 == 0)
+//        {
+//            $counter++;
+//        }
+//        echo $chus.'<br>';
+//        for ($i = 0; $i < $counter; $i++)
+//        {
+//            echo $tire;
+//        }
+//        echo '<br>';
+//        echo $znam.'<br>';
+//        echo $this->numerator.' / '.$this->denominator.'<br>';
+        echo $this->numerator;
+        echo '<br>';
+        echo $this->denominator;
+    }
 
 }

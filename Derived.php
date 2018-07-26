@@ -11,6 +11,15 @@ class Derived extends Base
     public $val;
     public function printVal()
     {
+//        echo $this->val;
+        $this->protectedVar = 'protected varrable';
+//        $this->
+        $this->publicVar = 13;
+        $this->val = 7;
+        echo $this->publicVar;
+        echo '<br>';
         echo $this->val;
+        echo '<br>';
+        echo $this->protectedVar;
     }
 }
